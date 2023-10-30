@@ -1,0 +1,681 @@
+/* PC (해상도 1024px)*/
+@media all and (min-width:1024px) {
+
+    .sec3 li,
+    .sec4 li {
+        width: 24%;
+        margin: 0 0.5% 70px;
+    }
+
+    ul.product li {
+        width: 24%;
+        margin: 0 0.5% 70px;
+    }
+    .secti2 {
+        margin: 0 240px;
+    }
+    footer {
+        padding: 62px 130px;
+        display: flex;
+        margin-top: 400px;
+    }
+    .mapCons .mapVisualAfter {
+        display: none;
+    }
+    .burgerMenu {
+        display: none;
+    }
+
+}
+
+/* 미니 (해상도 768px ~ 1023px)*/
+@media screen and (min-width: 1023px) and (max-width: 1460px) {
+    .topMenu h1 a {
+        width: 110px;
+        height: 51px;
+    }
+
+    .topMenu a {
+        font-size: 14px;
+    }
+
+    .sec5 div {
+        flex-direction: column;
+    }
+
+    .sec5 p {
+        margin-left: 0;
+        margin-top: 53px;
+    }
+
+    .sec7 {
+        justify-content: center;
+    }
+
+    .sec3 li,
+    .sec4 li {
+        width: 24%;
+        margin: 0 0.5% 70px;
+        overflow: hidden;
+    }
+
+    .sec3 ul, .sec4 ul {
+        padding: 0;
+    }
+    .sec6 ul {
+        width: 100%;
+    }
+    .sec7 {
+        width: 75.26vw;
+    }
+    .mapText {
+        width: 100%;
+        margin: 0 auto;
+    }
+    .mapVisual {
+        display: none;
+    }
+    .secti2 {
+        margin: 0 40px;
+    }
+
+    .secti2 .part1 img {
+        width: 325px;
+        margin-right: 70px;
+    }
+
+    .secti2 .part2 img {
+        width: 296px;
+        height: 235px;
+        margin-top: 90px;
+    }
+
+    .secti2 .part3 img {
+        width: 245px;
+        height: 240px;
+        margin-top: 50px;
+    }
+
+    .secti2 .part1 span,
+    .secti2 .part2 span,
+    .secti2 .part3 span {
+        font-size: 14px;
+    }
+
+    .mapVisual {
+        display: none;
+    }
+}
+
+
+
+/* 테블릿 가로, 테블릿 세로 (해상도 768px ~ 1023px)*/
+@media all and (min-width:768px) and (max-width:1023px) {
+    .inner {
+        width: none;
+    }
+
+    .topMenu h1 a {
+        width: 107px;
+        height: 33px;
+        display: block;
+        background: url('images/logo2-WH.png') no-repeat center / contain;
+        text-indent: -9999px;
+        position: absolute;
+        left: 40px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .topMenu.on h1 a {
+        background: url('images/logo2-Bl.png') no-repeat center / contain;
+    }
+
+    ul.nav {
+        display: none;
+        /* justify-content: flex-start; */
+    }
+
+    .shopLink {
+        display: block;
+    }
+
+    .subMenu.row {
+        display: block;
+    }
+
+    .topMenu.row {
+        display: block;
+        padding: 0 40px;
+        position: relative;
+        height: 53px;
+    }
+
+    header {
+        height: 92px;
+    }
+
+    .subMenuText {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .subMenuIcon {
+        position: absolute;
+        top: 50%;
+        right: 40px;
+        transform: translateY(-50%);
+    }
+
+    .topBanner img {
+        right: 35px;
+    }
+
+    .mainVisual {
+        height: 56.200vw;
+    }
+
+    .mapVisual {
+        display: none;
+    }
+    .mapVisualBefore ,
+    .mapVisualAfter {
+        display: none;
+    }
+
+    .sec1 {
+        padding: 150px 219px;
+    }
+
+    .sec1 p {
+        margin: 70px auto 0;
+    }
+
+    .sec2 .swiper {
+        width: 100%;
+    }
+
+    .sec3 li,
+    .sec4 li {
+        width: 49%;
+        margin: 0 0.5%;
+        overflow: hidden;
+    }
+    .productPerfume ul.product li {
+        margin: 0 3px 70px;
+    }
+    ul.product li {
+        width: 49%;
+        margin: 0 0.5% 70px;
+        overflow: hidden;
+    }
+
+    .sec3 ul,
+    .sec4 ul {
+        padding: 0;
+    }
+
+    .sec5 div {
+        flex-direction: column;
+    }
+
+    .sec5 p {
+        margin-left: 0;
+        margin-top: 53px;
+    }
+
+    .sec6 ul {
+        width: 100%;
+    }
+
+    .sec7 {
+        width: 75.26vw;
+        display: block;
+        justify-content: center;
+    }
+    .mapText {
+        width: 75.26vw;
+        margin: 0 auto;
+    }
+
+    .mapSelect {
+        justify-content: center;
+        width: 100%;
+        flex-direction: column;
+    }
+    .mapSelectDetail {
+        width: 75.26vw;
+        justify-content: space-between;
+    }
+    .store {
+        width: 100%;
+    }
+    .storeSearch div {
+        margin: 0;
+        width: 75.26vw;
+        text-align: center;
+        margin-top: 32px;
+    }
+    footer {
+        padding:  62px 40px;
+        display: flex;
+        margin-top: 400px;
+    }
+    .sect1 {
+        padding: 0;
+    }
+    .secti1 div.row {
+        display: block;
+    }
+
+    .secti1 p {
+        margin-top: 140px;
+    }
+
+    .secti2 {
+        margin: 0 40px;
+    }
+
+    .secti2 .part1 {
+        padding: 75px 0 0;
+    }
+
+    .secti2 .part1 img {
+        width: 325px;
+        height: 371px;
+        margin-right: 70px;
+    }
+
+    .secti2 .part1 span,
+    .secti2 .part2 span,
+    .secti2 .part3 span {
+        font-size: 14px;
+    }
+
+    .secti2 .part1 span {
+        margin-top: 65px;
+    }
+
+    .secti2 .part2 img {
+        width: 296px;
+        height: 235px;
+        margin-top: 90px;
+    }
+
+    .secti2 .part3 img {
+        width: 245px;
+        height: 240px;
+        margin-top: 50px;
+    }
+
+    .secti3 {
+        margin-top: 300px;
+        width: 100%;
+        height: 1118px;
+        overflow: hidden;
+    }
+
+    .secti3 div.row>img {
+        position: absolute;
+        top: 296px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .secti3 div>div>div {
+        top: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .secti3 img.logo {
+        margin-bottom: 720px;
+    }
+
+    .secti3 div>div>div {
+        top: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .subVisual:nth-child(2) {
+        width: 200%;
+    }
+
+    .secti1 .person {
+        width: 848px;
+        height: 850px;
+    }
+    .burgerMenu {
+        display: none;
+    }
+    .modal {
+        padding-left: 40px;
+    }
+
+}
+
+/* 모바일 가로, 모바일 세로 (해상도 480px ~ 767px)*/
+@media all and (max-width:767px) {
+
+    .topBanner,
+    .subMenu,
+    ul.nav {
+        display: none;
+    }
+
+    .topMenu.row {
+        display: block;
+        padding: 0 25px;
+    }
+
+    .topMenu h1 a {
+        width: 94px;
+        height: 29px;
+        display: block;
+        background: url('images/logo2-WH.png') no-repeat center / contain;
+        text-indent: -9999px;
+        position: absolute;
+        left: 25px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .topMenu.on h1 a {
+        background: url('images/logo2-Bl.png') no-repeat center / contain;
+    }
+
+    .burger {
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: 25px;
+        transform: translateY(-50%);
+    }
+
+    .topMenu.on .burger span {
+        background: #2B2620;
+    }
+
+    iframe {
+        display: none;
+    }
+
+    .mainVisual {
+        width: 100%;
+        height: 852px;
+        background: url('images/mainPage/SIVILLAGE.png') no-repeat center / cover;
+    }
+
+    .sec1 {
+        padding: 150px 26px 176px;
+    }
+
+    .sec1 div {
+        width: 193px;
+        height: 236px;
+    }
+
+    .sec1 p {
+        margin: 0;
+        margin-top: 35px;
+        font-size: 11px;
+    }
+    .sec3 h1,
+    .sec4 h1,
+    .sec6 h1 {
+        font-size: 25px;
+    }
+
+    .sec3 li,
+    .sec4 li {
+        width: 99%;
+        margin: 0 0.5% 60px;
+        overflow: hidden;
+    }
+
+    ul.product li {
+        width: 99%;
+        margin: 0 0.5% 181px;
+        overflow: hidden;
+    }
+
+    .sec3 ul,
+    .sec4 ul {
+        padding: 0;
+    }
+
+    .newThBox,
+    .bestThBox {
+        width: 100%;
+        height: 600px;
+    }
+
+    .productBox {
+        width: 100%;
+        height: 600px;
+    }
+
+    .sec5>div.row {
+        width: 100%;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .sec5 p {
+        margin-left: 0;
+        margin-top: 53px;
+    }
+
+    .sec6 ul {
+        width: 100%;
+    }
+    .sec7 {
+        width: 75.26vw;
+    }
+    .mapText {
+        width: 75.26vw;
+        margin: 0 auto;
+    }
+
+    .mapSelect {
+        width: 100%;
+        display: block;
+        position: relative;
+    }
+    .mapSelectDetail {
+        width: 75.26vw;
+    }
+
+    .store div p:not(:first-child) {
+        display: none;
+    }
+
+    .detailFirst,
+    .detailSecond {
+        width: 37.150vw;
+    }
+
+    .searchButton div {
+        justify-content: flex-start;
+    }
+
+    .searchButton img {
+        margin: 0 0 0 20px;
+    }
+
+    .storeSearch {
+        width: 75.26vw;
+        background: #2B2620;
+        margin-top: 32px;
+        position: absolute;
+        top: 50px;
+        left: 0;
+    }
+    .storeSearch > div {
+        margin: 0 auto;
+    }
+    .store {
+        width: 75.26vw;
+        height: 268px;
+    }
+
+    .store div {
+        width: 100%;
+        height: 34px;
+    }
+    .mapVisualBefore img,
+    .mapVisualAfter {
+        display: none;
+    }
+    .mapVisual {
+        display: none;
+    }
+    footer  {
+        margin-top: 400px;
+        padding: 82px 84px 0 84px;
+        height: 466px;
+        display: block;
+        text-align: center;
+    }
+
+    footer h1 a {
+        margin: 0 auto 42px;
+    }
+
+    footer div {
+        text-align: center;
+        justify-content: center;
+        margin: 4px auto;
+        flex-wrap: wrap;
+    }
+
+    footer p {
+        font-size: 10px;
+    }
+
+    footer  p.copyRight {
+        margin-top: 4px;
+    }
+    .sect1 {
+        padding: 0;
+    }
+    .secti2 .part1 {
+        padding: 0;
+    }
+
+    .secti1 div.row {
+        display: block;
+        overflow: hidden;
+    }
+
+    .secti1 p {
+        font-size: 11px;
+        margin: 120px 0 220px;
+    }
+
+    .secti2 {
+        padding: 0 25px;
+    }
+
+    .secti2 {
+        margin: 0 40px;
+    }
+
+    div[class^=part] {
+        display: block;
+    }
+
+    div[class^=part] span {
+        font-size: 9px;
+    }
+
+    .title p {
+        font-size: 25px;
+    }
+
+    .secti2 span:first-child {
+        margin: 20px 0 18px;
+    }
+
+    .secti2 .part1 img {
+        width: 213px;
+        height: 243px;
+        margin: 30px 0 20px;
+    }
+
+    .secti2 .part2 img {
+        width: 255px;
+        margin: 60px 0 0;
+    }
+
+    .secti2 .part3 img {
+        width: 188px;
+        margin: 50px 0 20px;
+    }
+
+    .secti3 {
+        margin-top: 300px;
+        width: 100%;
+        height: 1118px;
+        overflow: hidden;
+    }
+    .secti3 div {
+        text-align: center;
+        position: relative;
+    }
+    .secti3 div.row>img {
+        position: absolute;
+        top: 296px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .secti3 div.row p { 
+        font-size: 13px;
+    }
+
+    .secti3 div>div>div {
+        top: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .secti3 img.logo {
+        margin-bottom: 720px;
+    }
+
+    .subVisual:nth-child(2) {
+        width: 10000%;
+    }
+
+    .secti1 .person {
+        width: 437px;
+        height: 547px;
+        background: url('images/about us/person.png') no-repeat center / cover;
+        margin-top: 30px;
+    }
+    .sect2 {
+        padding: 0;
+    }
+    .store span {
+        margin: 0 0 20px 20px;
+    }
+    .store div {
+        width: 75.26vw;
+        margin: 0;
+        padding-left: 30px;
+        border: none;
+    }
+    .store div p {
+        border-bottom: 1px solid #dbdbdb;
+        padding-bottom: 10px;
+    }
+    .storeDetail > div {
+        padding-left: 20px;
+    }
+    .modal {
+        padding-left: 20px;
+    }
+}
