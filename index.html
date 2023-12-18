@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>경원재 사이트 리뉴얼</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="swiper-bundle.min.css">
+
+</head>
+<body>
+    <div class="topBtn">
+        <a href="#">
+            <img src="images/icons/down.svg" alt="">
+        </a>
+    </div>
+    <header>
+        <div class="topBanner">
+            <p>경원재 앰버서더 인천 시민 25% 객실 할인</p> 
+            <a href="">
+                <img src="images/icons/close2.png" alt="">
+            </a>
+        </div>
+        <div class="topMenu row">
+            <div class="mainMenu row">
+                <h1><a href="#">로고</a></h1>
+                <nav>
+                    <ul class="row">
+                        <li><a href="#">객실</a></li>
+                        <li><a href="#">다이닝</a></li>
+                        <li><a href="#">웨딩&미팅</a></li>
+                        <li><a href="sub.html">예약 / 멤버십</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="subMenu">
+                <ul class="row">
+                    <li><a href="#" onclick="login();">로그인</a></li>
+                    <li><a href="join.html">회원가입</a></li>
+                    <li><a href="#">KOR</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="mainVisual">
+            <h1 class="serif">비움과 사색의 공간</h1>
+            <h3>느림의 공간인 길, 비움의 공간인 마당, 사색의 공간인 후원을 품은 한옥 호텔 경원재</h3>
+            <div></div>
+        </section>
+        <section class="about inner row">
+            <div class="aboutText">
+                <h1 class="serif">ABOUT 경원재</h1>
+                <p class="title">비움과 사색의 공간 경원재 앰배서더 인천</p>
+                <p class="detail">최첨단 국제도시 인천 송도의 현대적인 빌딩 숲 속에서 고풍스러운 전통미를 뽐내며 장관을 연출하는 경원재 앰배서더 인천은 특급 호텔 서비스가 접목된 5성급 한옥호텔입니다. </p>
+                <button>자세히 보기</button>
+            </div>
+            <div class="aboutImg">
+            </div>
+        </section>
+        <section class="offers">
+            <h1 class="serif">Hotel Offers</h1>
+            <h4 class="serif">최상의 가치와 특별한 라이프 스타일을 경험할 수 있도록 다양한 오퍼를 제공하고 있습니다.</h4>
+            <div>
+                <ul class="row">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </section>
+        <section class="floor">
+            <div class="inner row">
+                <div> 
+                    <h1 class="serif">Floor Guide</h1>
+                    <p>최첨단 국제도시 인천 송도의 현대적인 빌딩 숲 속에서 고풍스러운 전통미를 뽐내며 장관을 연출하는 경원재 앰배서더 인천은 특급 호텔 서비스가 접목된 5성급 한옥호텔입니다. </p>
+                    <button>자세히 보기</button>
+                </div>
+                <img src="images/main_pc-floorInfo.png" alt="">
+            </div>
+        </section>
+        <section class="room inner">
+            <h1 class="serif">ROOM TYPE</h1>
+            <h4>우리 고유의 한옥을 연상케 하는 경원재 앰배서더 인천에는 스위트 룸 14채를 포함하여 총 30개의 객실이 있습니다. <br>
+                대한민국 명장들의 손길이 느껴지는 객실에서 안락한 휴식과 성공적인 비즈니스 업무를 위한 서비스를 경험해 보시기 바랍니다.</h4>
+            <div id="double">
+                <ul class="row">
+                    <li class="on"><a href="#">디럭스 더블</a></li>
+                    <li><a href="#" onclick="doubleSingle()" class="doublePre">디럭스 더블 & 싱글</a></li>
+                    <li><a href="#" onclick="sweet()">디럭스 스위트</a></li>
+                    <li><a href="#" onclick="ondol()">디럭스 온돌</a></li>
+                    <li><a href="#" onclick="royal()">로얄 스위트</a></li>
+                </ul>
+                <div class="swiper mySwiper2">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="images/double/double_main.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/double/double2.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/double/double3.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/double/double4.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/double/double5.jpg" />
+                        </div>
+                    </div>
+                </div>
+                <div thumbsSlider="" class="swiper mySwiper1">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="images/double/double_main.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/double/double2.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/double/double3.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/double/double4.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/double/double5.jpg" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="doubleSingle">
+                <ul class="row">
+                    <li><a href="#" onclick="double()">디럭스 더블</a></li>
+                    <li class="on"><a href="#">디럭스 더블 & 싱글</a></li>
+                    <li><a href="#" onclick="sweet()">디럭스 스위트</a></li>
+                    <li><a href="#" onclick="ondol()">디럭스 온돌</a></li>
+                    <li><a href="#" onclick="royal()"> 로얄 스위트</a></li>
+                </ul>
+                <div class="swiper mySwiper4">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="images/double_single/double_single_main.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/double_single/double_single2.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/double_single/double_single3.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/double_single/double_single4.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/double_single/double_single5.jpg" />
+                        </div>
+                    </div>
+                </div>
+                <div thumbsSlider="" class="swiper mySwiper3">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="images/double_single/double_single_main.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/double_single/double_single2.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/double_single/double_single3.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/double_single/double_single4.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/double_single/double_single5.jpg" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="sweet">
+                <ul class="row">
+                    <li><a href="#" onclick="double()">디럭스 더블</a></li>
+                    <li><a href="#" onclick="doubleSingle()">디럭스 더블 & 싱글</a></li>
+                    <li class="on"><a href="#">디럭스 스위트</a></li>
+                    <li><a href="#" onclick="ondol()">디럭스 온돌</a></li>
+                    <li><a href="#" onclick="royal()">로얄 스위트</a></li>
+                </ul>
+                <div class="swiper mySwiper6">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="images/sweet/sweet_main.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/sweet/sweet2.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/sweet/sweet3.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/sweet/sweet4.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/sweet/sweet5.jpg" />
+                        </div>
+                    </div>
+                </div>
+                <div thumbsSlider="" class="swiper mySwiper5">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="images/sweet/sweet_main.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/sweet/sweet2.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/sweet/sweet3.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/sweet/sweet4.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/sweet/sweet5.jpg" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="ondol">
+                <ul class="row">
+                    <li><a href="#" onclick="double()">디럭스 더블</a></li>
+                    <li><a href="#" onclick="doubleSingle()">디럭스 더블 & 싱글</a></li>
+                    <li><a href="#" onclick="sweet()">디럭스 스위트</a></li>
+                    <li class="on"><a href="#">디럭스 온돌</a></li>
+                    <li><a href="#" onclick="royal()">로얄 스위트</a></li>
+                </ul>
+                <div class="swiper mySwiper8">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="images/ondol/ondol_main.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/ondol/ondol2.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/ondol/ondol3.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/ondol/ondol4.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/ondol/ondol5.jpg" />
+                        </div>
+                    </div>
+                </div>
+                <div thumbsSlider="" class="swiper mySwiper7">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="images/ondol/ondol_main.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/ondol/ondol2.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/ondol/ondol3.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/ondol/ondol4.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/ondol/ondol5.jpg" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="royal">
+                <ul class="row">
+                    <li><a href="#" onclick="double()">디럭스 더블</a></li>
+                    <li><a href="#" onclick="doubleSingle()">디럭스 더블 & 싱글</a></li>
+                    <li><a href="#" onclick="sweet()">디럭스 스위트</a></li>
+                    <li><a href="#" onclick="ondol()">디럭스 온돌</a></li>
+                    <li class="on"><a href="#">로얄 스위트</a></li>
+                </ul>
+                <div class="swiper mySwiper10">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="images/royal/royal_main.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/royal/royal2.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/royal/royal3.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/royal/royal4.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/royal/royal5.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/royal/royal6.jpg" />
+                        </div>
+                    </div>
+                </div>
+                <div thumbsSlider="" class="swiper mySwiper9">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="images/royal/royal_main.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/royal/royal2.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/royal/royal3.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/royal/royal4.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/royal/royal5.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="images/royal/royal6.jpg" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="etc">
+            <h1 class="serif">Dining, Wedding, Party</h1>
+            <h4>엄선된 식재료만을 골라 임금님께 수라를 올리듯 정성껏 요리하며 찬 하나하나에도 섬세한 맛을 살려 특별한 미각을 선사하는 수라, <br>
+                송도 신도시의 편리함과 고풍스러운 한옥에서의 특별한 웨딩, 고려시대 주심포 방식으로 건축된 경원루</h4>
+            <div class="inner dining">
+                <h2 class="serif">DINING</h2>
+                <div class="swiper-etc" >
+                    <div class="swiper-scrollbar"></div>
+                    <div class="swiper-wrapper row">
+                        <div class="swiper-slide"></div>
+                        <div class="swiper-slide"></div>
+                        <div class="swiper-slide"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="inner wedding">
+                <h2 class="serif">WEDDING</h2>
+                <div class="swiper-etc" >
+                    <div class="swiper-scrollbar"></div>
+                    <div class="swiper-wrapper row">
+                        <div class="swiper-slide"></div>
+                        <div class="swiper-slide"></div>
+                        <div class="swiper-slide"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="inner party">
+                <h2 class="serif">PARTY</h2>
+                <div class="swiper-etc" >
+                    <div class="swiper-scrollbar"></div>
+                    <div class="swiper-wrapper row">
+                        <div class="swiper-slide"></div>
+                        <div class="swiper-slide"></div>
+                        <div class="swiper-slide"></div>
+                    </div>
+                </div>
+            </div>
+        </section> 
+        <section class="loginCons">
+            <div class="layer">
+                <div class="modal">
+                    <h2 class="serif">로그인</h2>
+                    <div class="input-wrapper row">
+                        <label for="ID">* 아이디</label>
+                        <input id="ID" name="ID" type="ID">
+                        <p class="err-msg" id="ID-err-msg">아이디는 필수 입력 값입니다.</p>
+                    </div>
+                    <div class="input-wrapper row">
+                        <label for="password">* 비밀번호</label>
+                        <input id="password" name="password" type="password">
+                        <p class="err-msg" id="password-err-msg">비밀번호는 필수 입력 값입니다.</p>
+                    </div>
+                    <button class="end" type="button" onclick="onLogin();">로그인</button>
+                    <p>아이디/비밀번호 찾기</p>
+                    <p class="snsJoin">간편 로그인</p>
+                    <div class="sns row">
+                        <img src="images/icons/naver.png" alt="">
+                        <img src="images/icons/kakao.png" alt="">
+                        <img src="images/icons/google.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div id="dim">
+            </div>
+        </section>
+        <footer>
+            <div class="inner">
+                <ul class="row">
+                    <li>해외호텔예약</li>
+                    <li>고객센터</li>
+                    <li>개인정보처리방침</li>
+                    <li>멤버십 약관</li>
+                    <li>채용</li>
+                    <li>사이트맵</li>
+                </ul> 
+                <div class="icon row">
+                    <div class="row left">
+                        <img src="images/icons/Accor_Logo.png" alt="">
+                        <img src="images/icons/ambassador_logo.png" alt="">
+                    </div>
+                    <div class="row right">
+                        <img src="images/icons/tripAdvisor.png" alt="">
+                        <img src="images/icons/faceBook.png" alt="">
+                        <img src="images/icons/insta.png" alt="">
+                    </div>
+                </div> 
+                <div class="text row">
+                    <p>인천경제자유구역청</p>
+                    <p>인천광역시 연수구 테크노파크로 200</p>
+                    <p>TEL. 032-729-1101</p>
+                    <p>사업자등록번호 379-83-00011</p>
+                    <p>통신판매신고번호 인천연수구0193호</p>
+                    <p>대표 이원재</p>
+                </div>
+                <p>Copyright (c) 2023 Ambassador Hotel Group. All rights reserved.</p>
+            </div>
+        </footer> 
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>    

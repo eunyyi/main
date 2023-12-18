@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>경원재 사이트 리뉴얼</title>
+    <link rel="stylesheet" href="join.css">
+</head>
+<body>
+    <div class="topBtn">
+        <a href="#">
+            <img src="images/icons/down.svg" alt="">
+        </a>
+    </div>
+    <header>
+        <div class="topBanner">
+            <p>경원재 앰버서더 인천 시민 25% 객실 할인</p> 
+            <a href="">
+                <img src="images/icons/close2.png" alt="">
+            </a>
+        </div>
+        <div class="topMenu row scroll">
+            <div class="mainMenu row">
+                <h1><a href="index.html">로고</a></h1>
+                <nav>
+                    <ul class="row">
+                        <li><a href="#">객실</a></li>
+                        <li><a href="#">다이닝</a></li>
+                        <li><a href="#">웨딩&미팅</a></li>
+                        <li><a href="sub.html">예약 / 멤버십</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="subMenu">
+                <ul class="row">
+                    <li><a href="#" onclick="login();">로그인</a></li>
+                    <li><a href="join.html">회원가입</a></li>
+                    <li><a href="#">KOR</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div>
+            <div class="bg"></div>
+            <div class="contents row">
+                <h1 class="serif">회원가입</h1>
+                <p>회원이 되어 다양한 혜택을 경험해 보세요!</p>
+                <div class="input-wrapper row">
+                    <label for="ID">* 아이디</label>
+                    <input id="ID" name="ID" type="ID">
+                    <p class="err-msg" id="ID-err-msg">아이디는 필수 입력 값입니다.</p>
+                </div>
+                <div class="input-wrapper row">
+                    <label for="password">* 비밀번호</label>
+                    <input id="password" name="password" type="password">
+                    <p class="err-msg" id="password-err-msg">비밀번호는 필수 입력 값입니다.</p>
+                </div>
+                <div class="input-wrapper row">
+                    <label for="password-check">* 비밀번호 확인</label>
+                    <input id="password-check" name="password-check" type="password-check">
+                    <p class="err-msg" id="password-check-err-msg">비밀번호 확인은 필수 입력 값입니다.</p>
+                </div>
+                <div class="input-wrapper row">
+                    <label for="phone-check">* 휴대폰 인증</label>
+                    <div class="phone-check">
+                        <div class="row">
+                            <input id="phone-check" name="phone-check" type="phone-check">
+                            <button>전송</button>
+                        </div>
+                        <input id="check" type="text">
+                    </div>
+                    <p class="err-msg" id="phone-check-err-msg">값을 입력해주세요.</p>
+                </div>
+                <span>가입 시, <span>서비스 이용약관, 개인정보처리방침</span>에 동의합니다. </span>
+                <div class="agree row">
+                    <input type="checkbox" name="checkbox" id="checkbox">
+                    <p>이벤트 알림 수신 동의</p>
+                </div>
+                <button class="end" type="button" onclick="onRegister();">회원가입하기</button>
+                <p class="snsJoin">계정 간편가입</p>
+                <div class="sns row">
+                    <img src="images/icons/naver.png" alt="">
+                    <img src="images/icons/kakao.png" alt="">
+                    <img src="images/icons/google.png" alt="">
+                </div>
+            </div>
+        </div>
+        <section class="loginCons">
+            <div class="layer">
+                <div class="modal">
+                    <h2 class="serif">로그인</h2>
+                    <div class="input-wrapper row">
+                        <label for="ID">* 아이디</label>
+                        <input id="ID" name="ID" type="ID">
+                        <p class="err-msg" id="ID-err-msg">아이디는 필수 입력 값입니다.</p>
+                    </div>
+                    <div class="input-wrapper row">
+                        <label for="password">* 비밀번호</label>
+                        <input id="password" name="password" type="password">
+                        <p class="err-msg" id="password-err-msg">비밀번호는 필수 입력 값입니다.</p>
+                    </div>
+                    <button class="end" type="button" onclick="onLogin();">로그인</button>
+                    <p>아이디/비밀번호 찾기</p>
+                    <p class="snsJoin">간편 로그인</p>
+                    <div class="sns row">
+                        <img src="images/icons/naver.png" alt="">
+                        <img src="images/icons/kakao.png" alt="">
+                        <img src="images/icons/google.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div id="dim">
+            </div>
+        </section>
+        <footer>
+            <div class="inner">
+                <ul class="row">
+                    <li>해외호텔예약</li>
+                    <li>고객센터</li>
+                    <li>개인정보처리방침</li>
+                    <li>멤버십 약관</li>
+                    <li>채용</li>
+                    <li>사이트맵</li>
+                </ul> 
+                <div class="icon row">
+                    <div class="row left">
+                        <img src="images/icons/Accor_Logo.png" alt="">
+                        <img src="images/icons/ambassador_logo.png" alt="">
+                    </div>
+                    <div class="row right">
+                        <img src="images/icons/tripAdvisor.png" alt="">
+                        <img src="images/icons/faceBook.png" alt="">
+                        <img src="images/icons/insta.png" alt="">
+                    </div>
+                </div> 
+                <div class="text row">
+                    <p>인천경제자유구역청</p>
+                    <p>인천광역시 연수구 테크노파크로 200</p>
+                    <p>TEL. 032-729-1101</p>
+                    <p>사업자등록번호 379-83-00011</p>
+                    <p>통신판매신고번호 인천연수구0193호</p>
+                    <p>대표 이원재</p>
+                </div>
+                <p>Copyright (c) 2023 Ambassador Hotel Group. All rights reserved.</p>
+            </div>
+        </footer> 
+    </main>
+    <script src="join.js"></script>
+</body>
+</html>

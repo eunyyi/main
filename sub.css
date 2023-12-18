@@ -1,0 +1,542 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+.row {
+    display: flex;
+}
+.serif {
+    font-family: 'Noto Serif KR', serif;
+}
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    width: 100%;
+    position: relative;
+}
+.inner {
+    width: 70.833vw;
+    margin: 0 auto;
+}
+h1 {
+    font-size: 45px;
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+h4 {
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 100px;
+}
+/* 탑버튼 */
+.topBtn {
+    opacity: 0;
+}
+.topBtn a {
+    display: block;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #DBDBDB;
+    background: #FFF;
+    text-align: center;
+    line-height: 50px;
+    position: fixed;
+    bottom: 55px;
+    right: 35px;
+    z-index: 9999;
+}
+.topBtn img {
+    width: 20px;
+    transform: scaleY(-1);
+}
+/* topBanner */
+.topBanner {
+    padding: 10px;
+    width: 100%;
+    background-color: #695239;
+    text-align: center;
+    color: #FFF; 
+    position: relative;
+}
+.topBanner img {
+    width: 30px;
+    position: absolute;
+    top: 50%;
+    right: 120px;
+    transform: translateY(-50%);
+}
+/* 헤더 */
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+.topMenu {
+    width: 100%;
+    height: 59px;
+    justify-content: space-between;
+    margin-top: 46px;
+    padding: 0 80px;
+    background-color: transparent;
+    align-items: center;
+}
+.topMenu.scroll {
+    background-color: #fff;
+    margin: 0;
+    padding: 46px 80px;
+}
+.topMenu.scroll a {
+    color: #4C4949;
+}
+.topMenu.scroll h1 {
+    margin: 0;
+}
+.topMenu.scroll h1 a {
+    display: block;
+    width: 151px;
+    height: 59px;
+    background: url('images/logo/logo-Bl_2.png') no-repeat center / contain;
+    text-indent: -9999px;
+    margin: 0;
+}
+.topMenu h1 a {
+    display: block;
+    width: 151px;
+    height: 59px;
+    background: url('images/logo/typeLogo_wh_2.png') no-repeat center / contain;
+    text-indent: -9999px;
+}
+.topMenu a {
+    color: #FFF;
+}
+.mainMenu {
+    width: 619px;
+    justify-content: space-between;
+    align-items: center;
+}
+.mainMenu li {
+    padding: 10px;
+}
+.subMenu {
+    width: 278px;
+}
+.subMenu li {
+    padding: 20px;
+}
+/* sec.reser */
+section.reser {
+    margin-top: 238px;
+}
+section.reser > div.row {
+    height: 170px;
+    align-items: center;
+}
+.reser .select.cons {
+    padding: 20px 50px;
+}
+.reser .cons {
+    height: 110px;
+    align-items: center;
+    padding: 0px 50px;
+}
+section.reser h1,
+section.reser h4 {
+    text-align: center;
+}
+.name {
+    height: 24px;
+    overflow: hidden;
+}
+.name > .row {
+    width: 212px;
+    margin-bottom: 10px;
+    justify-content: space-between;
+}
+.name  a {
+    color: #1A1A1A;
+}
+/* section class="find" */
+.find-checkIn {
+    margin-right: 75px;
+}
+.reser p {
+    margin-bottom: 15px;
+    color: #695239;
+    font-size: 18px;
+    font-weight: 500 ;
+}
+.find.cons {
+    border-left: 1px solid #D9D9D9;
+    border-right: 1px solid #D9D9D9;
+}
+/* 인풋 리셋 */
+.find-checkIn input,
+.find-checkOut input {
+    width: 127px;
+    height: 45px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    border: none; 
+}
+.find-checkIn input:focus,
+.find-checkOut input:focus {
+    outline: none;
+}
+.find-input input::placeholder {
+    color: #1a1a1a;
+}
+
+.adult {
+    margin: 0 70px ;
+}
+.reser button {
+    background: #695239;
+    width: 200px;
+    height: 54px;
+    text-align: center;
+    line-height: 100%;
+    color: #FFF;
+    font-size: 15px;
+    font-weight: 700;
+    border: none;
+    
+}
+
+.room,
+.adult,
+.kid {
+    text-align: center;
+}
+.room {
+    width: 34px;
+}
+.adult div.row,
+.kid div.row {
+    align-items: center;
+}
+.adult button,
+.kid button {
+    width: 16px;
+    background: none;
+    color: #606060;
+    font-size: 18px;
+
+}
+.adult input,
+.kid input {
+    width: 9px;
+    height: 15px;
+    border: none;
+    text-align: center;
+    color: #1A1A1A;
+    font-size: 15px;
+    font-weight: 700;
+    margin: 0 20px;
+}
+/* reservation 탭 */
+.reservation  {
+    text-align: center;
+    margin-top: 100px;
+    display: none;
+}
+.reservation h2 {
+    font-size: 30px;
+    color: #1A1A1A;
+    font-weight: 400;
+    margin: 40px 0 50px;
+}
+.reservation > div > div {
+    width: 440px;
+    position: relative;
+}
+.reservation > div.row {
+    justify-content: space-between;
+}
+.reservation img {
+    width: 100%;
+    height: 220px;
+}
+.reservation p {
+    font-size: 20px;
+    font-weight: 400;
+    color: #1A1A1A;
+    margin: 46px 0;
+}
+.reservation span {
+    font-size: 15px;
+    font-weight: 400;
+    display: inline-block;
+}
+.reservation .person {
+    margin: 16px 0 20px;
+}
+.reservation button {
+    width: 99px;
+    height: 44px;
+    background: #FFF;
+    border: 1px solid #8D8D8D;
+    color: #1A1A1A;
+    position: absolute;
+    top: 440px;
+    right: 12px;
+    cursor: pointer;
+}
+/* memebership */
+.membership {
+    margin: 220px auto 260px;
+}
+.membership h1 {
+    text-align: center;
+}
+.membership .img {
+    width: 70.625vw;
+    height: 635px;
+    background: url('images/lobby.jpg') no-repeat center / cover;
+    margin: 100px 0 110px;
+}
+.membership h2 {
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 30px ;
+}
+p.top {
+    color: #1A1A1A;
+    font-size: 20px;
+    font-weight: 400; 
+    margin-bottom: 10px;   
+}
+p.bottom {
+    color: #757575;
+    font-size: 18px;
+    font-weight: 400;
+}
+.joinInfo {
+    padding-bottom: 25px;
+    border-bottom: 1px solid #6A6A6A;
+    margin-bottom: 50px;
+}
+.joinInfo div,
+.joinQue div {
+    margin-bottom: 25px;
+}
+/* card */
+.clubAmber {
+    width: 100%;
+    background-color:#0A2A59;
+    padding: 5.208vw 19.844vw 6.146vw;
+    color: #FFF;
+    
+}
+.ambassaborClub {
+    width: 100%;
+    background-color:#fafafa;
+    padding: 5.208vw 19.844vw 6.146vw;
+    color: #1a1a1a;
+    
+}
+.card h2 {
+    font-size: 35px;
+    font-weight: 400;
+    padding: 20px 30px;
+    margin-bottom: 30px ;
+}
+.cardCons {
+    width: 60.885vw;
+    height: 361px;
+    align-items: center;
+    justify-content: space-between;
+}
+.clubAmber img {
+    width: 624px;
+    height: 361px;
+}
+.ambassaborClub img {
+    width: 728px;
+    height: 240px;
+}
+.cardCons >  div {
+    text-align: center;
+    
+}
+.cardCons >  div p {
+    font-size: 20px;
+    font-weight: 400;
+}
+.cardCons >  div p:not(:last-child) {
+    margin-bottom: 7px;
+}
+.card button {
+    background: #3D3D3D;
+    color: #FFF;
+    padding: 15px 40px;
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 40px;
+    border: none;
+    cursor: pointer;
+}
+.plus {
+    margin: 70px 115px 0;
+}
+/* modal */
+.loginCons {
+    display: none;
+}
+.loginCons.on {
+    display: block;
+    z-index: 999;
+}
+#dim {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 998;
+    background: rgba(0, 0, 0, .5);
+}
+.layer {
+    width: 798px;
+    height: 774px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+}
+.modal {
+    background: #FFF;
+    color: #1A1A1A;
+    padding: 90px 162px 77px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.modal h2 {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 400;
+    margin-bottom: 80px;
+}
+.modal .input-wrapper {
+    flex-direction: column;
+    align-items: center;
+}
+.modal label {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 12px;
+    align-self: flex-start;
+}
+.modal input {
+    width: 473px;
+    height: 50px;
+    border-radius: 5px;
+    border: 1px solid #858585;
+    margin-bottom: 20px;
+}
+.modal p.err-msg {
+    height: 16px;
+    color: red;
+    font-size: 14px;
+    margin-bottom: 15px;
+    align-self: flex-start;
+    display: none;
+}
+button.end {
+    width: 473px;
+    height: 68px;
+    background-color: #000;
+    color: #FFF;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 18px auto;
+    cursor: pointer;
+}
+.modal p {
+    align-self: flex-end;
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration-line: underline;
+    cursor: pointer;
+    margin-bottom: 34px;
+}
+.modal p.snsJoin {
+    width: 474px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    border-top: 1px solid #CACACA;
+    margin: 0 auto;
+    text-decoration-line: none;
+}
+.modal .sns {
+    width: 245px;
+    justify-content:space-between;
+    margin: 0 auto;
+}
+.modal .sns img {
+    width: 56px;
+    height: 56px;
+    cursor: pointer;
+}
+
+/* footer */
+footer {
+    width: 100%;
+    height: 400px;
+    background: #363636;
+}
+footer .inner {
+    padding-top: 54px;
+}
+footer ul li {
+    font-size: 22px;
+    color: #FFF;
+    padding: 0 27px;
+    margin-bottom: 30px;
+}
+footer ul li:not(:last-child) {
+    border-right: 1px solid #B0B0B0;
+}
+footer .inner .icon {
+    width: 66.719vw;
+    height: 100px;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 10px;
+}
+footer .row.left {
+    align-items: center;
+}
+footer .row.left img:first-child {
+    width: 70px;
+    height: 57px;
+}
+footer .row.left img:last-child {
+    width: 120px;
+    height: 120px;
+}
+footer .row.right img {
+    width: 70px;
+    height: 70px;
+}
+footer .row.right img:nth-child(2) {
+    margin: 0 20px;
+}
+footer p {
+    font-size: 16.5px;
+    padding: 0 10px;
+    color: #fff;
+    box-sizing: border-box;
+}
+footer .text p:not(:last-child) {
+    border-right: 1px solid #B0B0B0;
+}
