@@ -1,0 +1,1060 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap');
+@supports(-webkit-mask-image: url(#mask)) or (mask-image: url(#mask)) {
+    /* code that requires mask-image here. */
+    }
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+body {
+    width: 100%;
+    height: 100vh;
+    font-family: 'Noto Sans KR', sans-serif;
+    position: relative;
+}
+.row {
+    display: flex;
+}
+.serif {
+    font-family: 'Noto Serif KR', serif;
+}
+.inner {
+    width: 86.458vw;
+    margin: 0 auto;
+}
+/* header */
+header {
+    width: 100%;
+    position: fixed;
+    z-index: 998;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.topBanner {
+    width: 100%;
+    height: 39px;
+    text-align: center;
+    line-height: 39px;
+    color: #7A664F;
+    font-size: 11px;
+    background: #FCFBF8;
+    position: relative;
+    transition: height 1s;
+    overflow: hidden;
+}
+.topBanner img {
+    width: 20px;
+    position: absolute;
+    top: 9px;
+    right: 130px;
+}
+.topMenu {
+    height: 86px;
+    line-height: 86px;
+    justify-content: space-between;
+    padding: 0 130px;
+    background: transparent;
+    align-items: center;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 900;
+}
+.topMenu a {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 900;
+}
+.topMenu h1 a {
+    width: 140px;
+    height: 64px;
+    display: block;
+    background: url('images/logo-Wh.png') no-repeat center / contain;
+    text-indent: -9999px;
+}
+.topMenu.on {
+    transition: transform 1000ms;
+    background: #fff;
+}
+.topMenu.on a,
+.topMenu.on li {
+    color: #2B2620;
+}
+.topMenu.on h1 a {
+    background: url('images/logo-Bl.png') no-repeat center / contain;
+}
+.topMenu.on img {
+    filter: invert(13%) sepia(13%) saturate(626%) hue-rotate(353deg) brightness(0%) contrast(94%);
+}
+ul.nav {
+    width: 442px;
+    justify-content: space-between;
+}
+ul.nav li {
+    border-bottom: 1px solid transparent;
+}
+ul li.bar {
+    border-bottom: 2px solid #000;
+}
+ul.subMenu {
+    width: 375px;
+    justify-content: space-between;
+}
+.subMenuText {
+    width: 191px;
+    justify-content: space-between;
+}
+.subMenuIcon {
+    width: 121px;
+    justify-content: space-between;
+    /* margin-left: 3.333vw; */
+}
+.shopLink {
+    display: none;
+}
+/* mainVisual video */
+.mainVisual {
+    width: 100%;
+    /* height: 100vh; */
+    overflow: hidden;
+    z-index: 997;
+}
+iframe {
+    width: 100%;
+    aspect-ratio: 1920/1080;
+}
+/* sec1 */
+.sec1 {
+    width: 100%;
+    text-align: center;
+    padding: 150px;
+}
+.sec1 p {
+    font-size: 18px;
+    color: #2B2620;
+    font-weight: 500;
+    line-height: 170%;
+    margin: 70px 160px;
+}
+.sec1 div {
+    width: 279px;
+    margin: 0 auto;
+    height: 342px;
+    background: url('images/main/main\ img.gif') no-repeat center / cover;
+}
+/* sec2 */
+.sec2 .swiper {
+    width: 100%;
+    /* height: 100vh; */
+    /* border: 2px solid red; */
+}
+
+/*****************************/
+.sec2 .swiper-wrapper {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1920/847;
+}
+.sec2 .swiper-slide {
+    height: auto;
+    aspect-ratio: 1920/847;
+}
+.sec2 .slide1 {
+    background: url('images/main/mainVisual3.jpg') no-repeat center / cover;
+}
+.sec2 .slide2 {
+    background: url('images/main/mainVisual1.jpg') no-repeat center / cover;
+}
+.sec2 .slide3 {
+    background: url('images/main/mainVisual2.jpg') no-repeat center / cover;
+}
+
+/* sec3 New Arrival */
+/* sec4 Best Seller */
+.sec3, 
+.sec4 {
+    color:#2B2620 ;
+}
+.sec3 h1,
+.sec4 h1,
+.sec6 h1 {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    margin: 200px 0 100px;
+}
+.sec3 ul,
+.sec4 ul {
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 130px;
+}
+.sec3 li,
+.sec4 li {
+    width: 400px;
+    height: 711px;
+    text-align: center;
+    position: relative;
+    margin-bottom: 70px;
+}
+.sec3 a,
+.sec4 a {
+    color: #2B2620; 
+}
+.newThBox,
+.bestThBox {
+    background: #F5F5F5;
+    width: 100%;
+    /* height: 600px; */
+    aspect-ratio: 394/600;
+    position: relative;
+}
+div[class^=newThImg],
+div[class^=bestThImg] {
+    /* z-index: 997; */
+    width: 280px;
+    height: 420px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+} 
+.newThImg1 {
+    background: url('images/main/new/giant.jpg') no-repeat center / cover;
+}
+.newThImg2 {
+    background: url('images/main/new/roomSpray.jpg') no-repeat center / cover;
+}
+.newThImg3 {
+    background: url('images/main/new/limited-hair.jpg') no-repeat center / cover;
+}
+.newThImg4 {
+    background: url('images/main/new/limited.jpg') no-repeat center / cover;
+}
+p.thName {
+    margin: 30px 0;
+}
+P.thPrice {
+    font-weight: 500;
+} 
+.newBadge {
+    padding: 15px 18px;
+    background: #748B8B;
+    color:#FCFBF8;
+    font-size: 20px;
+    font-weight: 700;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+.bestThImg1 { 
+    background: url('images/main/best/perfume/Orpheon.jpg') no-repeat center / cover;
+}
+.bestThImg2 {
+    background: url('images/main/best/perfume/FleurdePeau.jpg') no-repeat center / cover;
+}
+.bestThImg3 {
+    background: url('images/main/best/toillette/EaudesSens2.jpg') no-repeat center / cover;
+}
+.bestThImg4 {
+    background: url('images/main/best/toillette/EaudesSens1.jpg') no-repeat center / cover;
+}
+.bestThImg5 {
+    background: url('images/main/best/perfume/TamDao.jpg') no-repeat center / cover;
+}
+.bestThImg6 {
+    background: url('images/main/best/perfume/Doson.jpg') no-repeat center / cover;
+}
+.bestThImg7 {
+    background: url('images/main/best/limited.jpg') no-repeat center / cover;
+}
+.bestThImg8 {
+    background: url('images/main/best/capsule.jpg') no-repeat center / cover;
+}
+.bestBadge {
+    padding: 16px 29px;
+    color: #FCFBF8;
+    background: #606C2D;
+    font-size: 25px; 
+    font-weight: 700;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.bestBadge1 {
+    background: #EEAF25;
+    padding: 16px 29px;
+    color: #FCFBF8;
+    font-size: 25px;
+    font-weight: 700;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.sec4 {
+    margin-bottom: 140px;
+}
+/* sec5 */
+.sec5 {
+    width: 100%;
+    height: 847px;
+    background: url('images/main/main_img2.gif') no-repeat center / cover;
+    position: relative;
+}
+.sec5 div.row {
+    width: 63.854vw;
+    height: 484px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    align-items: center;
+}
+.sec5 img {
+    width: 750px;
+    height: 484px;
+}
+.sec5 p {
+    color: #2D2D2D;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 170%;
+    margin-left: 110px;
+    width: 204px;
+}
+.sec5 .mask {
+    width: 100%;
+    height: 847px;
+    background: rgba(256, 256, 256, .8);
+}
+/* sec6 */
+.sec6 ul {
+    width: 1445px;
+    height: 342px;
+    margin: 0 auto 65px;
+    opacity: 60%;
+}
+.sec6 li {
+    width: 481px;
+}
+.sec6 li:first-child {
+    background: url('images/main/main_img4.jpg') no-repeat center / cover;
+}
+.sec6 li:nth-child(2) {
+    background: url('images/main/main_img5.jpg') no-repeat center / cover;
+}
+.sec6 li:last-child {
+    background: url('images/main/main_img6.jpg') no-repeat center / cover;
+}
+/* sec7 */
+.sec7 {
+    width: 1445px;
+    height: 650px;
+    margin: 0 auto 206px;
+    justify-content: space-between;
+}
+.mapText {
+    width: 825px;
+}
+.mapText > span {
+    margin: 40px 0 100px;
+    color: #2B2620;
+    font-size: 17px;
+    display: block;
+
+}
+.store span {
+    color: #2B2620;
+    font-size: 17px;
+    display: block;
+    margin-left: 40px;
+}
+.mapSelect {
+    height: 45px;
+}
+.mapSelectDetail {
+    width: 595px;
+    justify-content: space-between;
+} 
+.mapSelectDetail ul.detailFirst,
+.mapSelectDetail ul.detailSecond {
+    background: #FFF;
+    height: 45px;
+    overflow: hidden;
+    justify-content: space-between;
+    z-index: 997;
+}
+.mapSelectDetail ul.detailFirst:hover {
+    height: 180px;
+}
+.mapSelectDetail ul li {
+    width: 290px;
+    padding: 10px 0;
+}
+.searchButton div {
+    color: #2B2620;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    border-bottom: 1px solid #868686;
+    justify-content: space-between;
+}
+.searchButton img {
+    margin-right: 10px;
+}
+.mapSelectDetail div a {
+    width: 100%;
+    color: #2B2620;
+}
+.mapSelectDetail div a p {
+    padding: 10px 20px;
+    border-bottom: 1px solid #cecece;
+}
+/* 검색버튼 */
+.storeSearch div {
+    display: flex;
+    width: 194px;
+    padding: 10px 52px;
+    background: #2B2620;
+    color: #FFF;
+    margin-left: 27px;
+}
+.storeSearch img {
+    margin-left: 10px;
+    width: 17px;
+}
+.store {
+    width: 822px;
+    height: 456px;
+    background: #FAFAFA;
+    padding-top: 40px;
+    margin-top: 113px;
+    display: block;
+}   
+.store div {
+    height: 100px;
+    color: #000;
+    margin: 0 10px 0 60px;
+    border-bottom: 1px solid #dbdbdb;
+}
+.store div:not(:first-child) {
+    margin-top: 20px;
+}
+.store span {
+    display: block;
+    font-size: 17px;
+    margin: 0 0 20px 50px;
+}
+.shopName {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.shopMap,
+.shopNumber {
+    font-size: 15px;
+    color: #868686;
+    margin-bottom: 10px;
+}
+.mapVisual {
+    width: 503px;
+}
+.mapVisual img {
+    width: 503px;
+    height: 648px;
+    margin-top: 75px;
+}
+/* footer */
+footer {
+    background: #F8F8F8;
+    color: #646464;
+    font-size: 14px;
+    font-weight: 500;
+    width: 100%;
+    justify-content: space-between;
+}   
+footer div {
+    justify-content: flex-end;
+}
+footer div {
+    text-align:right;
+}
+footer h1 a {
+    width: 119px;
+    height: 55px;
+    display: block;
+    background: url('images/logo-Bl.png') no-repeat center / contain;
+    text-indent: -9999px;
+}
+footer div > div {
+    margin: 12px 0;
+}
+p.copyRight {
+    margin-top: 30px;
+}
+/* topBtn */
+.topBtn {
+    opacity: 0;
+}
+.topBtn a {
+    display: block;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #DBDBDB;
+    background: #FFF;
+    text-align: center;
+    line-height: 50px;
+    position: fixed;
+    bottom: 55px;
+    right: 35px;
+    z-index: 9999;
+}
+.topBtn img {
+    width: 20px;
+    transform: scaleY(-1);
+}
+
+
+/* pageSub */
+.sect1 {
+    margin-bottom : 60px;
+    flex-wrap: nowrap;
+    padding: 0 130px;
+}
+.subVisual {
+    width: 33.3%;
+    height: 661px;
+    background: url('images/sub/sub_mainVisual.jpg') no-repeat center / cover;
+}
+.subVisual:first-child,
+.subVisual:last-child {
+    opacity: .6;
+}
+.sect2 {
+    margin-bottom: 196px;
+    padding: 0 130px;
+}
+.sect2 ul.row.serif {
+    width: 384px;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+.sect2 ul.row.serif a {
+    font-size: 17px;
+    padding: 10px 40px;
+    border-radius: 30px;
+    border: 1px solid #5f5f5f;
+    text-align: center;
+    color: #000;
+}
+.sect2 ul.row.serif a.total {
+    background: #000;
+    color: #fff;
+}
+.sect2 ul.row.serif a.total.off {
+    border: 1px solid #5f5f5f;
+    background: #fff;
+    color: #000;
+}
+.sect2 ul.row.serif a:not(:first-child):hover {
+    background: #000;
+    color: #fff;
+}
+.sect2 div {
+    align-items: center;
+}
+.sect2 div.row {
+    margin: 104px 0 34px;
+}
+.sect2 div p:first-child {
+    font-size: 17px;
+    font-weight: 700;
+}
+.sect2 div p:last-child {
+    font-size: 17px;
+    font-weight: 400;
+}
+.sect2 div span {
+    display: inline;
+    width: 2px;
+    height: 19px;
+    margin: 0 20px;
+    background: #A8A8A8;
+}
+.productToillette .productImg1 {
+    background: url('images/sub/toillette/EauRose.jpg') no-repeat center / cover;
+}
+.productToillette .productImg2 {
+    background: url('images/sub/toillette/Olene.jpg') no-repeat center / cover;
+}
+.productToillette .productImg3 {
+    background: url('images/sub/toillette/Oyedo.jpg') no-repeat center / cover;
+}
+.productToillette .productImg4 {
+    background: url('images/sub/toillette/TamDao.jpg') no-repeat center / cover;
+}
+.productToillette .productImg5 {
+    background: url('images/sub/toillette/Philosykos.jpg') no-repeat center / cover;
+}
+.productToillette .productImg6 {
+    background: url('images/sub/toillette/Doson.jpg') no-repeat center / cover;
+}
+.productToillette .productImg7 {
+    background: url('images/sub/toillette/LEaudeNeroli1.jpg') no-repeat center / cover;
+}
+.productToillette .productImg8 {
+    background: url('images/sub/toillette/LEauPapier.jpg') no-repeat center / cover;
+}
+.productToillette .productImg9 {
+    background: url('images/sub/toillette/LOmbredanslEau.jpg') no-repeat center / cover;
+}
+.productToillette .productImg10 {
+    background: url('images/sub/toillette/EaudesSens.jpg') no-repeat center / cover;
+}
+.productToillette .productImg11 {
+    background: url('images/sub/toillette/EauDuelle.jpg') no-repeat center / cover;
+}
+.productToillette .productImg12 {
+    background: url('images/sub/toillette/Vetyverio.jpg') no-repeat center / cover;
+}
+.productToillette .productImg13 {
+    background: url('images/sub/toillette/EauMoheli.jpg') no-repeat center / cover;
+}
+.productToillette .productImg14 {
+    background: url('images/sub/toillette/Ofresia.jpg') no-repeat center / cover;
+}
+.productToillette .productImg15 {
+    background: url('images/sub/toillette/GeraniumOdorata.jpg') no-repeat center / cover;
+}
+.productToillette .productImg16 {
+    background: url('images/sub/toillette/EaudeLierre.jpg') no-repeat center / cover;
+}
+ul.product {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* border: 1px solid #000; */
+}
+ul.product li {
+    width: 400px;
+    height: 704px;
+    text-align: center;
+    margin-bottom: 70px;
+    /* border: 1px solid red; */
+    position: relative;
+}
+ul.product li:last-child {
+    margin-bottom: 0;
+}
+ul.product a {
+    color: #2B2620; 
+}
+.productBox {
+    background: #F5F5F5;
+    width: 100%;
+    position: relative;
+    aspect-ratio: 394/600;
+}
+div[class^=productImg] {
+    z-index: 997;
+    width: 90%;
+    aspect-ratio: 1/1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+} 
+.productPerfume ul.product {
+    justify-content: flex-start;
+    width: 100%;
+    flex-wrap: wrap;
+    /* border: 1px solid #000; */
+}
+.productPerfume ul.product li {
+    /* margin: 0 7px 70px; */
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    margin-bottom: 70px;
+}
+.productPerfume .productImg1 {
+    background: url('images/sub/perfume/EauRose.jpg') no-repeat center / cover;
+}
+.productPerfume .productImg2 {
+    background: url('images/sub/perfume/Orpheon.jpg') no-repeat center / cover;
+}
+.productPerfume .productImg3 {
+    background: url('images/sub/perfume/Vetyverio.jpg') no-repeat center / cover;
+}
+.productPerfume .productImg4 {
+    background: url('images/sub/perfume/FleurdePeau.jpg') no-repeat center / cover;
+}
+.productPerfume .productImg5 {
+    background: url('images/sub/perfume/Tempo.jpg') no-repeat center / cover;
+}
+.productPerfume .productImg6 {
+    background: url('images/sub/perfume/Doson.jpg') no-repeat center / cover;
+}
+.productPerfume .productImg7 {
+    background: url('images/sub/perfume/EauCapitale.jpg') no-repeat center / cover;
+}
+.productPerfume .productImg8 {
+    background: url('images/sub/perfume/EauDuelle.jpg') no-repeat center / cover;
+}
+.productPerfume .productImg9 {
+    background: url('images/sub/perfume/LOmbredanslEau.jpg') no-repeat center / cover;
+}
+.productPerfume .productImg10 {
+    background: url('images/sub/perfume/Philosykos.jpg') no-repeat center / cover;
+}
+.productPerfume .productImg11 {
+    background: url('images/sub/perfume/EaudeMinthe.jpg') no-repeat center / cover;
+}
+.productPerfume .productImg12 {
+    background: url('images/sub/perfume/OudPalao.jpg') no-repeat center / cover;
+}
+.productPerfume .productImg13 {
+    background: url('images/sub/perfume/TamDao2.jpg') no-repeat center / cover;
+}
+.productPerfume .productImg14 {
+    background: url('images/sub/perfume/Volutes.jpg') no-repeat center / cover;
+}
+/* product hover */
+.sect2 .hover {
+    width: 292px;
+    height: 335px;
+    background: rgba(245, 245, 245, .6);
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 999;
+    display: none;
+}
+.sect2 .productToillette ul.product .hover p {
+    font-size: 14px;
+    color: #000;
+    margin-bottom: 10px;
+    text-align: left;
+}
+.sect2 .hover div > div {
+    width: 292px;
+    height: 6px;
+    position: relative;
+}
+.sect2 .hover div:first-child > div {
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(147,65,81,1) 100%);
+}
+.sect2 .hover div:nth-child(2) > div {
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(11,92,156,1) 100%);
+}
+.sect2 .hover div:last-child > div {
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(16,106,17,1) 100%);
+}
+.sect2 .hover div span {
+    width: 14px;
+    height: 14px;
+    display: block;
+    border-radius: 50%;
+    background: #fff;
+    position: absolute;
+    z-index: 999;
+}
+.sect2 .hover div:not(:last-child) div span {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.sect2 .hover div:last-child span {
+    top: 50%;
+    left: 30%;
+    transform: translateY(-50%);
+}
+.sect2 .hover div:nth-child(2) {
+    margin: 50px 0;
+}
+
+/* pageAboutUs */
+/* secti1 */
+.secti1 {
+    width: 100%;
+    position: relative;
+}
+.secti1 img{
+    width: 137px;
+    height: 145px;
+    margin: 150px 0 0 40px;
+}
+.secti1 .person {
+    width: 1054px;
+    height: 1056px;
+    margin: 0 auto;
+    background: url('images/about us/about\ us_img2\ .jpg') no-repeat center / cover;
+}
+.secti1 p {
+    color: #2B2620;
+    font-size: 22px;
+    font-weight: 500;
+    text-align: center;
+    line-height: 170%;
+    margin: 150px 0 220px;
+}
+/* secti2 */
+.secti2 div > div {
+    margin: 0 auto;
+}
+.secti2 .title {
+    padding: 31px 0;
+    border-bottom: 1px solid #7A664F;
+}
+.secti2 .part1 {
+    padding: 55px 90px 0 90px;
+}
+.secti2 .part1 img {
+    width: 431px;
+    height: 443px;
+    margin-right: 65px;
+}
+.part1 div {
+    margin-top: 127px;
+}
+.secti2 span {
+    color: #000;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 170%;
+    display: block;
+    margin-bottom: 52px;
+}
+.secti2 p {
+    color: #2B2620;
+    font-size: 31px;
+    font-weight: 600;
+}
+.secti2 p:last-child {
+    color: #767676;
+}
+.part2 {
+    margin-top: 90px;
+}
+.part2 img {
+    width: 457px;
+}
+.part2 span {
+    text-align: right;
+}
+.part2 span:first-child {
+    margin-top: 86px;
+}
+.part3 {
+    margin: 49px 0 0 85px;
+}
+.part3 img {
+    width: 352px;
+    margin-right: 67px;
+}
+.part3 span:first-child {
+    margin: 43px 0 63px;
+} 
+.secti2 > div:nth-child(2) {
+    margin: 166px 0;
+}
+/* secti3 */
+.secti3 {
+    width: 100%;
+    height: 757px;
+    background: #123829;
+    margin-top: 405px;
+    position: relative;
+}
+.secti3 div > div > img {
+    height: 602px;
+    margin-top: 67px;
+}
+.secti3 div > div > div {
+    text-align: center;
+    color: #fff;
+    font-weight: 18;
+    font-weight: 600;
+    line-height: 140%;
+    position: absolute;
+    top: 200px;
+    left: 1071px;
+}
+.secti3 img.logo {
+    height: 152px;
+    margin-bottom: 64px;
+}
+/* offline map modal */
+#dim {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 998;
+    background: rgba(0, 0, 0, .5);
+}
+.mapCons {
+    display: none;
+}
+.mapCons.on {
+    display: block;
+}
+.layer {
+    width: 87.552vw;
+    height: 802px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    overflow: hidden;
+}
+.mapCons .mapVisualBefore img {
+    height: 488px;
+    margin: 186px 0 0 50px;
+}
+.mapCons .mapVisualAfter {
+    margin: 186px 0 102px 70px;
+    background: none;
+}
+.mapVisualAfter p {
+    font-size: 16px;
+}
+.mapVisualAfter > p {
+    font-size: 20px;
+    margin: 30px 0;
+}
+p.blank {
+    margin-right: 8px;
+}
+.mapVisualAfter div > img {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
+.mapCons .mapVisualAfter img.storeImg {
+    width: 522px;
+    height: 391px;
+}
+.mapVisualAfter .margin {
+    margin: 15px 0;
+}
+.modal {
+    background: #fff;
+    padding: 0 0 26px 40px;
+    position: relative;
+}
+.layer .mapClose {
+    position: absolute;
+    top: 30px;
+    right: 45px;
+}
+.layer .mapClose img {
+    width: 20px;
+    height: 20px;
+}
+
+.lotte,
+.near {
+    background: #FCFBF8;
+}
+.lotte {
+    margin-bottom: 20px;
+}
+.storeDetail {
+    width: 100%;
+    height: 687px;
+    margin-top: 113px;
+    display: none;
+}   
+.storeDetail > div {
+    width: 100%;
+    color: #000;
+    padding: 0 0 40px 50px;
+}
+.storeDetail .near div:not(:first-child) {
+    margin-top: 20px;
+    height: 97px;
+    border-bottom: 1px solid #DBDBDB;
+}
+.storeDetail .near {
+    height: 270px;
+    overflow: scroll;
+}
+.storeDetail span {
+    display: block;
+    font-size: 17px;
+}
+.shopName {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.shopMap,
+.shopNumber {
+    font-size: 15px;
+    color: #868686;
+    margin-bottom: 10px;
+}
+.storeDetail span {
+    padding-top: 40px;
+    margin-bottom: 38px; 
+}
+a.shinsegae {
+    color: #000;
+}
+.burger {
+    display: none;
+    cursor: pointer;
+}
+.burger span {
+    width: 18px;
+    height: 2px;
+    display: block;
+    background: #fff;
+}
+.burger span:nth-child(2) {
+    margin: 5px 0;
+}
+.burgerMenu {
+    width: 100%;
+    height: 100vh;
+    background: rgba(256, 256, 256, .9);
+    padding: 89px 0 0 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+}
+.burgerMenu ul {
+    height: 369px;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 352px;
+}
+.burgerMenu li,
+.burgerMenu a {
+    color: #2B2620;
+    font-size: 13px;
+    font-weight: 900;
+    font-family: 'Noto Serif KR', serif;
+}
+.burgerMenu p {
+    color: #AEAEAE;
+    font-size: 9px;
+    font-weight: 900;
+    text-align: center;
+}
+.closeMenu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+.closeMenu img {
+    width: 15px;
+}
