@@ -101,75 +101,75 @@ export const H4 = styled.h4`
 //     padding: 20px;
 // `;
 
-//메인
-//메인비쥬얼
-export const MainVisual = styled.section`
-    width: 100%;
-    height: 1224px;
-    background: url('mainVisual_resizing.jpg') no-repeat center / cover;
-    text-align: center;
-    color: #FFF;
-    padding-top: 370px;
-    position: relative;
-`;
+// //메인
+// //메인비쥬얼
+// export const MainVisual = styled.section`
+//     width: 100%;
+//     height: 1224px;
+//     background: url('mainVisual_resizing.jpg') no-repeat center / cover;
+//     text-align: center;
+//     color: #FFF;
+//     padding-top: 370px;
+//     position: relative;
+// `;
 
-export const MainVisualH1 = styled.h1`
-    margin-bottom: 28px;
-    font-size: 60px;
-    font-weight: 400;
-`;
+// export const MainVisualH1 = styled.h1`
+//     margin-bottom: 28px;
+//     font-size: 60px;
+//     font-weight: 400;
+// `;
 
-export const MainVisualH3 = styled.h3`
-    font-size: 25px;
-    font-weight: 500;
-`;
+// export const MainVisualH3 = styled.h3`
+//     font-size: 25px;
+//     font-weight: 500;
+// `;
 
-export const MainVisualDiv = styled.div`
-    width: 100%;
-    height: 77px;
-    background: url('images/mainVisual_line.png') no-repeat center / cover;
-    position: absolute;
-    bottom: 0;
-`;
+// export const MainVisualDiv = styled.div`
+//     width: 100%;
+//     height: 77px;
+//     background: url('images/mainVisual_line.png') no-repeat center / cover;
+//     position: absolute;
+//     bottom: 0;
+// `;
 //sec.about
-export const About = styled.section`
-    justify-content: space-between;
-    padding-top: 220px;
-    color: #1a1a1a;
-`;
+// export const About = styled.section`
+//     justify-content: space-between;
+//     padding-top: 220px;
+//     color: #1a1a1a;
+// `;
 
-export const AboutText = styled.div`
-    letter-spacing: -0.5px;
-`;
+// export const AboutText = styled.div`
+//     letter-spacing: -0.5px;
+// `;
 
-export const AboutImg = styled.div`
-    background: url('images/about.jpg') no-repeat center / cover;
-    width: 746px;
-    height: 497px;
-`;
+// export const AboutImg = styled.div`
+//     background: url('images/about.jpg') no-repeat center / cover;
+//     width: 746px;
+//     height: 497px;
+// `;
 
-export const AboutTitle = styled.p`
-    font-size: 22px;
-    margin-top: 25px;
-`;
+// export const AboutTitle = styled.p`
+//     font-size: 22px;
+//     margin-top: 25px;
+// `;
 
-export const AboutDetail = styled.p`
-    width: 482px;
-    font-size: 20px;
-    margin-top: 25px;
-    line-height: 160%;
-    margin-right: 100px;
-`;
+// export const AboutDetail = styled.p`
+//     width: 482px;
+//     font-size: 20px;
+//     margin-top: 25px;
+//     line-height: 160%;
+//     margin-right: 100px;
+// `;
 
-export const AboutButton = styled.button`
-    background-color: transparent;
-    border: none;
-    margin-top: 70px;
-    font-size: 22px;
-    font-weight: 400;
-    cursor: pointer;
-    font-family: Noto Sans KR; 
-`;
+// export const AboutButton = styled.button`
+//     background-color: transparent;
+//     border: none;
+//     margin-top: 70px;
+//     font-size: 22px;
+//     font-weight: 400;
+//     cursor: pointer;
+//     font-family: Noto Sans KR; 
+// `;
 //sec.offer
 export const Offers = styled.section`
     width: 67.552vw;

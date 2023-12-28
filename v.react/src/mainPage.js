@@ -1,31 +1,4 @@
 
-import floorInfo from './main_pc-floorInfo.png';
-import doubleMain from './double/double_main.jpg';
-import double2 from './double/double2.jpg';
-import double3 from './double/double3.jpg';
-import double4 from './double/double4.jpg';
-import double5 from './double/double5.jpg';
-import doubleSingleMain from './double_single/double_single_main.jpg';
-import doubleSingle2 from './double_single/double_single2.jpg';
-import doubleSingle3 from './double_single/double_single3.jpg';
-import doubleSingle4 from './double_single/double_single4.jpg';
-import doubleSingle5 from './double_single/double_single5.jpg';
-import sweetMain from './sweet/sweet_main.jpg';
-import sweet2 from './sweet/sweet2.jpg';
-import sweet3 from './sweet/sweet3.jpg';
-import sweet4 from './sweet/sweet4.jpg';
-import sweet5 from './sweet/sweet5.jpg';
-import ondolMain from './ondol/ondol_main.jpg';
-import ondol2 from './ondol/ondol2.jpg';
-import ondol3 from './ondol/ondol3.jpg';
-import ondol4 from './ondol/ondol4.jpg';
-import ondol5 from './ondol/ondol5.jpg';
-import royalMain from './royal/royal_main.jpg';
-import royal2 from './royal/royal2.jpg';
-import royal3 from './royal/royal3.jpg';
-import royal4 from './royal/royal4.jpg';
-import royal5 from './royal/royal5.jpg';
-import royal6 from './royal/royal6.jpg';
 import naver from './icons/naver.png';
 import kakao from './icons/kakao.png';
 import google from './icons/google.png';
@@ -34,70 +7,57 @@ import ambassaLogo from './icons/ambassador_logo.png';
 import tripLogo from './icons/tripAdvisor.png';
 import facebookLogo from './icons/faceBook.png';
 import instaLogo from './icons/insta.png';
-import { About, AboutButton, AboutDetail, AboutImg, AboutText, AboutTitle, Floor, FloorBtn, FloorH1, FloorImg, FloorP, H1, H4, Header, MainMenu, MainMenuLi, MainVisual, MainVisualDiv, MainVisualH1, MainVisualH3, Offers, OffersLi, OffersUl, RoomH1, RoomH4, SubMenu, SubMenuLi, TopBanner, TopBannerImg, TopBtn, TopBtnA, TopBtnImg, TopMenu, TopMenuA, TopMenuLogo } from './main.styles';
 import { HeaderCons } from './components/header';
 import { TopBtnCons } from './components/topBtn';
+import { MainVisualCons } from './components/main/mainVisual';
+import { AboutCons } from './components/main/about';
+import { OfferCons } from './components/main/offer';
+import { FloorCons } from './components/main/floor';
+import { Double} from './components/main/room-double';
+import { DoubleSingle } from './components/main/room-doubleSingle';
+import { Sweet } from './components/main/room-sweet';
+import { Ondol } from './components/main/room-ondol';
+import { Royal } from './components/main/room-royal';
+import { useState } from 'react';
+import styled from "@emotion/styled";
 
+export const RoomH1 = styled.h1`
+    text-align: center;
+    font-weight: 500;
+;`
+
+export const RoomH4 = styled.h4`
+    text-align: center;
+;`
+
+export const RoomLi = styled.li`
+    padding: 17px 20px;
+`;
+
+export const RoomA = styled.a`
+    color: #000;
+    font-size: 24px;
+`;
 
 const MainPage = () => {
+  let roomList = [
+    {target:'01', title: '디럭스 더블', component:<Double/>},
+    {target:'02', title: '디럭스 더블&싱글', component:<DoubleSingle/>},
+    {target:'03', title: '디럭스 스위트', component:<Sweet/>},
+    {target:'04', title: '디럭스 온돌', component:<Ondol/>},
+    {target:'05', title: '로얄 스위트', component:<Royal/>},
+  ];
+  const [target, setTarget] =useState('01');
 
   return (
     <>
       <TopBtnCons/>
       <HeaderCons/>
       <main>
-        <MainVisual>
-          <MainVisualH1 className="serif">비움과 사색의 공간</MainVisualH1>
-          <MainVisualH3>
-            느림의 공간인 길, 비움의 공간인 마당, 사색의 공간인 후원을 품은 한옥
-            호텔 경원재
-          </MainVisualH3>
-          <MainVisualDiv />
-        </MainVisual>
-        <About className="inner row">
-          <AboutText>
-            <h1 className="serif">ABOUT 경원재</h1>
-            <AboutTitle>비움과 사색의 공간 경원재 앰배서더 인천</AboutTitle>
-            <AboutDetail>
-              최첨단 국제도시 인천 송도의 현대적인 빌딩 숲 속에서 고풍스러운
-              전통미를 뽐내며 장관을 연출하는 경원재 앰배서더 인천은 특급 호텔
-              서비스가 접목된 5성급 한옥호텔입니다.{" "}
-            </AboutDetail>
-            <AboutButton>자세히 보기</AboutButton>
-          </AboutText>
-          <AboutImg></AboutImg>
-        </About>
-        <Offers>
-          <H1 className="serif">Hotel Offers</H1>
-          <H4 className="serif">
-            최상의 가치와 특별한 라이프 스타일을 경험할 수 있도록 다양한 오퍼를
-            제공하고 있습니다.
-          </H4>
-          <div>
-            <OffersUl className="row">
-              <OffersLi />
-              <OffersLi />
-              <OffersLi />
-              <OffersLi />
-              <OffersLi />
-              <OffersLi />
-            </OffersUl>
-          </div>
-        </Offers>
-        <Floor>
-          <div className="inner row">
-            <div>
-              <FloorH1 className="serif">Floor Guide</FloorH1>
-              <FloorP>
-                최첨단 국제도시 인천 송도의 현대적인 빌딩 숲 속에서 고풍스러운
-                전통미를 뽐내며 장관을 연출하는 경원재 앰배서더 인천은 특급 호텔
-                서비스가 접목된 5성급 한옥호텔입니다.{" "}
-              </FloorP>
-              <FloorBtn>자세히 보기</FloorBtn>
-            </div>
-            <FloorImg src={floorInfo} alt="" />
-          </div>
-        </Floor>
+        <MainVisualCons/>
+        <AboutCons/>
+        <OfferCons/>
+        <FloorCons/>
         <section className="room inner">
           <RoomH1 className="serif">ROOM TYPE</RoomH1>
           <RoomH4>
@@ -106,338 +66,20 @@ const MainPage = () => {
             대한민국 명장들의 손길이 느껴지는 객실에서 안락한 휴식과 성공적인
             비즈니스 업무를 위한 서비스를 경험해 보시기 바랍니다.
           </RoomH4>
-          <div id="double">
-            <ul className="row">
-              <li className="on">
-                <a href="#!">디럭스 더블</a>
-              </li>
-              <li>
-                <a href="#!" onclick="doubleSingle()" className="doublePre">
-                  디럭스 더블 &amp; 싱글
-                </a>
-              </li>
-              <li>
-                <a href="#!" onclick="sweet()">
-                  디럭스 스위트
-                </a>
-              </li>
-              <li>
-                <a href="#!" onclick="ondol()">
-                  디럭스 온돌
-                </a>
-              </li>
-              <li>
-                <a href="#!" onclick="royal()">
-                  로얄 스위트
-                </a>
-              </li>
-            </ul>
-            <div className="swiper mySwiper2">
-              <div className="swiper-wrapper">
-                <div className="swiper-slide">
-                  <img src={doubleMain} alt=''/>
-                </div>
-                <div className="swiper-slide">
-                  <img src={double2} alt=''/>
-                </div>
-                <div className="swiper-slide">
-                  <img src={double3} alt=''/>
-                </div>
-                <div className="swiper-slide">
-                  <img src={double4} alt=''/>
-                </div>
-                <div className="swiper-slide">
-                  <img src={double5} alt=''/>
-                </div>
-              </div>
-            </div>
-            <div thumbsslider="" className="swiper mySwiper1">
-              <div className="swiper-wrapper">
-                <div className="swiper-slide">
-                  <img src={doubleMain} alt=''/>
-                </div>
-                <div className="swiper-slide">
-                  <img src={double2} alt=''/>
-                </div>
-                <div className="swiper-slide">
-                  <img src={double3} alt=''/>
-                </div>
-                <div className="swiper-slide">
-                  <img src={double4} alt=''/>
-                </div>
-                <div className="swiper-slide">
-                  <img src={double5} alt=''/>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div id="doubleSingle">
-            <ul className="row">
-              <li>
-                <a href="#!" onclick="double()">
-                  디럭스 더블
-                </a>
-              </li>
-              <li className="on">
-                <a href="#!">디럭스 더블 &amp; 싱글</a>
-              </li>
-              <li>
-                <a href="#!" onclick="sweet()">
-                  디럭스 스위트
-                </a>
-              </li>
-              <li>
-                <a href="#!" onclick="ondol()">
-                  디럭스 온돌
-                </a>
-              </li>
-              <li>
-                <a href="#!" onclick="royal()">
-                  {" "}
-                  로얄 스위트
-                </a>
-              </li>
-            </ul>
-            <div className="swiper mySwiper4">
-              <div className="swiper-wrapper">
-                <div className="swiper-slide">
-                  <img src={doubleSingleMain}  alt=''/>
-                </div>
-                <div className="swiper-slide">
-                  <img src={doubleSingle2}  alt=''/>
-                </div>
-                <div className="swiper-slide">
-                  <img src={doubleSingle3}  alt=''/>
-                </div>
-                <div className="swiper-slide">
-                  <img src={doubleSingle4}  alt=''/>
-                </div>
-                <div className="swiper-slide">
-                  <img src={doubleSingle5} alt=''/>
-                </div>
-              </div>
-            </div>
-            <div thumbsslider="" className="swiper mySwiper3">
-              <div className="swiper-wrapper">
-                <div className="swiper-slide">
-                  <img src={doubleSingleMain} alt=''/>
-                </div>
-                <div className="swiper-slide">
-                  <img src={doubleSingle2} alt=''/>
-                </div>
-                <div className="swiper-slide">
-                  <img src={doubleSingle3} alt=''/>
-                </div>
-                <div className="swiper-slide">
-                  <img src={double4} alt=''/>
-                </div>
-                <div className="swiper-slide">
-                  <img src={double5} alt=''/>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div id="sweet">
-            <ul className="row">
-              <li>
-                <a href="#!" onclick="double()">
-                  디럭스 더블
-                </a>
-              </li>
-              <li>
-                <a href="#!" onclick="doubleSingle()">
-                  디럭스 더블 &amp; 싱글
-                </a>
-              </li>
-              <li className="on">
-                <a href="#!">디럭스 스위트</a>
-              </li>
-              <li>
-                <a href="#!" onclick="ondol()">
-                  디럭스 온돌
-                </a>
-              </li>
-              <li>
-                <a href="#!" onclick="royal()">
-                  로얄 스위트
-                </a>
-              </li>
-            </ul>
-            <div className="swiper mySwiper6">
-              <div className="swiper-wrapper">
-                <div className="swiper-slide">
-                  <img src={sweetMain} alt=''/>
-                </div>
-                <div className="swiper-slide">
-                  <img src={sweet2} alt=''/>
-                </div>
-                <div className="swiper-slide">
-                  <img src={sweet3} alt=''/>
-                </div>
-                <div className="swiper-slide">
-                  <img src={sweet4} alt=''/>
-                </div>
-                <div className="swiper-slide">
-                  <img src={sweet5} alt=''/>
-                </div>
-              </div>
-            </div>
-            <div thumbsslider="" className="swiper mySwiper5">
-              <div className="swiper-wrapper">
-                <div className="swiper-slide">
-                  <img src={sweetMain} alt=''/>
-                </div>
-                <div className="swiper-slide">
-                  <img src={sweet2} alt=''/>
-                </div>
-                <div className="swiper-slide">
-                  <img src={sweet3} alt=''/>
-                </div>
-                <div className="swiper-slide">
-                  <img src={sweet4} alt=''/>
-                </div>
-                <div className="swiper-slide">
-                  <img src={sweet5} alt=''/>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div id="ondol">
-            <ul className="row">
-              <li>
-                <a href="#!" onclick="double()">
-                  디럭스 더블
-                </a>
-              </li>
-              <li>
-                <a href="#!" onclick="doubleSingle()">
-                  디럭스 더블 &amp; 싱글
-                </a>
-              </li>
-              <li>
-                <a href="#!" onclick="sweet()">
-                  디럭스 스위트
-                </a>
-              </li>
-              <li className="on">
-                <a href="#!">디럭스 온돌</a>
-              </li>
-              <li>
-                <a href="#!" onclick="royal()">
-                  로얄 스위트
-                </a>
-              </li>
-            </ul>
-            <div className="swiper mySwiper8">
-              <div className="swiper-wrapper">
-                <div className="swiper-slide">
-                  <img src={ondolMain} alt=''/>
-                </div>
-                <div className="swiper-slide">
-                  <img src={ondol2} alt=''/>
-                </div>
-                <div className="swiper-slide">
-                  <img src={ondol3} alt=''/>
-                </div>
-                <div className="swiper-slide">
-                  <img src={ondol4} alt=''/>
-                </div>
-                <div className="swiper-slide">
-                  <img src={ondol5} alt=''/>
-                </div>
-              </div>
-            </div>
-            <div thumbsslider="" className="swiper mySwiper7">
-              <div className="swiper-wrapper">
-                <div className="swiper-slide">
-                  <img src={ondolMain} alt=''/>
-                </div>
-                <div className="swiper-slide">
-                  <img src={ondol2} alt=''/>
-                </div>
-                <div className="swiper-slide">
-                  <img src={ondol3} alt=''/>
-                </div>
-                <div className="swiper-slide">
-                  <img src={ondol4} alt=''/>
-                </div>
-                <div className="swiper-slide">
-                  <img src={ondol5} alt=''/>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div id="royal">
-            <ul className="row">
-              <li>
-                <a href="#!" onclick="double()">
-                  디럭스 더블
-                </a>
-              </li>
-              <li>
-                <a href="#!" onclick="doubleSingle()">
-                  디럭스 더블 &amp; 싱글
-                </a>
-              </li>
-              <li>
-                <a href="#!" onclick="sweet()">
-                  디럭스 스위트
-                </a>
-              </li>
-              <li>
-                <a href="#!" onclick="ondol()">
-                  디럭스 온돌
-                </a>
-              </li>
-              <li className="on">
-                <a href="#!">로얄 스위트</a>
-              </li>
-            </ul>
-            <div className="swiper mySwiper10">
-              <div className="swiper-wrapper">
-                <div className="swiper-slide">
-                  <img src={royalMain} alt=''/>
-                </div>
-                <div className="swiper-slide">
-                  <img src={royal2} alt=''/>
-                </div>
-                <div className="swiper-slide">
-                  <img src={royal3} alt=''/>
-                </div>
-                <div className="swiper-slide">
-                  <img src={royal4} alt=''/>
-                </div>
-                <div className="swiper-slide">
-                  <img src={royal5} alt=''/>
-                </div>
-                <div className="swiper-slide">
-                  <img src={royal6} alt=''/>
-                </div>
-              </div>
-            </div>
-            <div thumbsslider="" className="swiper mySwiper9">
-              <div className="swiper-wrapper">
-                <div className="swiper-slide">
-                  <img src={royalMain} alt=''/>
-                </div>
-                <div className="swiper-slide">
-                  <img src={royal2} alt=''/>
-                </div>
-                <div className="swiper-slide">
-                  <img src={royal3} alt=''/>
-                </div>
-                <div className="swiper-slide">
-                  <img src={royal4} alt=''/>
-                </div>
-                <div className="swiper-slide">
-                  <img src={royal5} alt=''/>
-                </div>
-                <div className="swiper-slide">
-                  <img src={royal6} alt=''/>
-                </div>
-              </div>
-            </div>
-          </div>
+          <ul className='row'>
+            {
+              roomList.map((el)=>
+              <RoomLi
+                key={el.target}
+                onClick={()=>{setTarget(el.target)}}>
+                  <RoomA style={{cursor:'pointer'}}>{el.title}</RoomA>
+              </RoomLi>
+              )
+            }
+          </ul>
+            {
+              roomList.find((el)=>{return el.target === target}).component
+            }
         </section>
         <section className="etc">
           <h1 className="serif">Dining, Wedding, Party</h1>
