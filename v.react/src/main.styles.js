@@ -170,130 +170,152 @@ export const H4 = styled.h4`
 //     cursor: pointer;
 //     font-family: Noto Sans KR; 
 // `;
-//sec.offer
-export const Offers = styled.section`
-    width: 67.552vw;
-    margin: 0 auto;
-    margin-top: 220px;
-    color: #1A1A1A;
-    text-align: center;
-`;
+// //sec.offer
+// export const Offers = styled.section`
+//     width: 67.552vw;
+//     margin: 0 auto;
+//     margin-top: 220px;
+//     color: #1A1A1A;
+//     text-align: center;
+// `;
 
-export const OffersUl = styled.ul`
-    width: 67.552vw;
-    height: 578px;
-    flex-wrap: wrap;
-    border: 1px solid #000;
-`;
+// export const OffersUl = styled.ul`
+//     width: 67.552vw;
+//     height: 578px;
+//     flex-wrap: wrap;
+//     border: 1px solid #000;
+// `;
 
-export const OffersLi = styled.li`
-    width: 419px;
-    height: 279px;
-    margin-bottom: 20px;
-    margin-right: 10px;
-    border: 1px solid #000;
+// export const OffersLi = styled.li`
+//     width: 419px;
+//     height: 279px;
+//     margin-bottom: 20px;
+//     margin-right: 10px;
+//     border: 1px solid #000;
 
-    :nth-child(1) {
-        background: url('./offers/01.jpg') no-repeat center / cover;
-    }
-    :nth-child(2) {
-        background: url('./offers/02.jpg') no-repeat center / cover;
-    }
-    :nth-child(3) {
-        background: url('./offers/03.jpg') no-repeat center / cover;
-    }
-    :nth-child(4) {
-        background: url('./offers/04.jpg') no-repeat center / cover;
-    }
-    :nth-child(5) {
-        background: url('./offers/05.jpg') no-repeat center / cover;
-    }
-    :nth-child(6) {
-        background: url('./offers/06.jpg') no-repeat center / cover;
-    }
+//     :nth-child(1) {
+//         background: url('./offers/01.jpg') no-repeat center / cover;
+//     }
+//     :nth-child(2) {
+//         background: url('./offers/02.jpg') no-repeat center / cover;
+//     }
+//     :nth-child(3) {
+//         background: url('./offers/03.jpg') no-repeat center / cover;
+//     }
+//     :nth-child(4) {
+//         background: url('./offers/04.jpg') no-repeat center / cover;
+//     }
+//     :nth-child(5) {
+//         background: url('./offers/05.jpg') no-repeat center / cover;
+//     }
+//     :nth-child(6) {
+//         background: url('./offers/06.jpg') no-repeat center / cover;
+//     }
 
-    :nth-child(1):hover {
-        background: url('./offers/after1.png') no-repeat center / cover;
-    }
-    :nth-child(2):hover {
-        background: url('./offers/after2.png') no-repeat center / cover;
-    }
-    :nth-child(3):hover {
-        background: url('./offers/after3.png') no-repeat center / cover;
-    }
-    :nth-child(4):hover {
-        background: url('./offers/after4.png') no-repeat center / cover;
-    }
-    :nth-child(5):hover {
-        background: url('./offers/after5.png') no-repeat center / cover;
-    }
-    :nth-child(6):hover {
-        background: url('./offers/after6.png') no-repeat center / cover;
-    }
-`;
-//sec.floor
-export const Floor = styled.section`
-    width: 100%;
-    height: 459px;
-    background-color: #efefef;
-    padding: 0;
-    margin: 220px 0;
+//     :nth-child(1):hover {
+//         background: url('./offers/after1.png') no-repeat center / cover;
+//     }
+//     :nth-child(2):hover {
+//         background: url('./offers/after2.png') no-repeat center / cover;
+//     }
+//     :nth-child(3):hover {
+//         background: url('./offers/after3.png') no-repeat center / cover;
+//     }
+//     :nth-child(4):hover {
+//         background: url('./offers/after4.png') no-repeat center / cover;
+//     }
+//     :nth-child(5):hover {
+//         background: url('./offers/after5.png') no-repeat center / cover;
+//     }
+//     :nth-child(6):hover {
+//         background: url('./offers/after6.png') no-repeat center / cover;
+//     }
+// `;
+// //sec.floor
+// export const Floor = styled.section`
+//     width: 100%;
+//     height: 459px;
+//     background-color: #efefef;
+//     padding: 0;
+//     margin: 220px 0;
 
-`;
+// `;
 
-export const FloorH1 = styled.h1`
-    font-weight: 500;
-    margin: 34px 0 60px;
-`;
+// export const FloorH1 = styled.h1`
+//     font-weight: 500;
+//     margin: 34px 0 60px;
+// `;
 
-export const FloorP = styled.p`
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 160%;
-    letter-spacing: -0.5px;
-`;
+// export const FloorP = styled.p`
+//     font-size: 20px;
+//     font-weight: 400;
+//     line-height: 160%;
+//     letter-spacing: -0.5px;
+// `;
 
-export const FloorBtn = styled.button`
-    border: none;
-    margin: 125px 0 64px;
-    font-size: 22px;
-    font-weight: 400;
-    cursor: pointer;
-    font-family: Noto Sans KR; 
-`;
+// export const FloorBtn = styled.button`
+//     border: none;
+//     margin: 125px 0 64px;
+//     font-size: 22px;
+//     font-weight: 400;
+//     cursor: pointer;
+//     font-family: Noto Sans KR; 
+// `;
 
-export const FloorImg = styled.img`
-    height: 440px;
-`;
+// export const FloorImg = styled.img`
+//     height: 440px;
+// `;
 //sec.room
-export const RoomH1 = styled.h1`
+// export const RoomH1 = styled.h1`
+//     text-align: center;
+//     font-weight: 500;
+// ;`
+
+// export const RoomH4 = styled.h4`
+//     text-align: center;
+// ;`
+
+// export const RoomLi = styled.li`
+//     padding: 17px 20px;
+// `;
+
+// export const RoomA = styled.a`
+//     color: #000;
+//     font-size: 24px;
+// `;
+//sec.etc
+export const Etc = styled.section`
+    padding: 220px 0;
+`;
+
+export const EtcH1 = styled.h1`
     text-align: center;
     font-weight: 500;
-;`
+`;
 
-export const RoomH4 = styled.h4`
+export const EtcH4 = styled.h4`
     text-align: center;
-;`
-
-export const RoomLi = styled.li`
-    padding: 17px 20px;
 `;
 
-export const RoomA = styled.a`
-    color: #000;
-    font-size: 24px;
+export const EtcH2 = styled.h2`
+    font-size: 38px;
+    font-weight: 700;
+    position: relative;
+    top: 25px; 
 `;
 
-export const DoubleSingle = styled.div`
-    display: none;
+export const Swiper = styled.div`
+    width: 100%;
+    height: 568px;
+    background: rgba(240, 240, 240, 0.80);
+    padding-top: 45px;
 `;
-export const Sweet = styled.div`
-    display: none;
+
+export const SwiperCons = styled.div`
+    width: 630px;
 `;
-export const Ondol = styled.div`
-    display: none;
-`;
-export const Royal = styled.div`
-    display: none;
+
+export const SwiperSlide = styled.div`
+    height: 497px;
 `;
 

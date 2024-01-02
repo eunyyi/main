@@ -36,22 +36,22 @@ export const OffersLi = styled.li`
     border: 1px solid #000;
 
     :nth-child(1) {
-        background: url('./offers/01.jpg') no-repeat center / cover;
+        background: url('/assets/offers/01.jpg') no-repeat center / cover;
     }
     :nth-child(2) {
-        background: url('./offers/02.jpg') no-repeat center / cover;
+        background: url('/assets/offers/02.jpg') no-repeat center / cover;
     }
     :nth-child(3) {
-        background: url('./offers/03.jpg') no-repeat center / cover;
+        background: url('/assets/offers/03.jpg') no-repeat center / cover;
     }
     :nth-child(4) {
-        background: url('./offers/04.jpg') no-repeat center / cover;
+        background: url('/assets/offers/04.jpg') no-repeat center / cover;
     }
     :nth-child(5) {
-        background: url('./offers/05.jpg') no-repeat center / cover;
+        background: url('/assets/offers/05.jpg') no-repeat center / cover;
     }
     :nth-child(6) {
-        background: url('./offers/06.jpg') no-repeat center / cover;
+        background: url('/assets/offers/06.jpg') no-repeat center / cover;
     }
 
     :nth-child(1):hover {

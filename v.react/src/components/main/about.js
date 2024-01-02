@@ -11,7 +11,7 @@ export const AboutText = styled.div`
 `;
 
 export const AboutImg = styled.div`
-    background: url(../../images/about.jpg) no-repeat center / cover;
+    background: url('/assets/about.jpg') no-repeat center / cover;
     width: 746px;
     height: 497px;
 `;
@@ -41,20 +41,18 @@ export const AboutButton = styled.button`
 
 export const AboutCons = () => {
     return(
-        <>
-            <About className="inner row">
-                <AboutText>
-                <h1 className="serif">ABOUT 경원재</h1>
-                <AboutTitle>비움과 사색의 공간 경원재 앰배서더 인천</AboutTitle>
-                <AboutDetail>
-                    최첨단 국제도시 인천 송도의 현대적인 빌딩 숲 속에서 고풍스러운
-                    전통미를 뽐내며 장관을 연출하는 경원재 앰배서더 인천은 특급 호텔
-                    서비스가 접목된 5성급 한옥호텔입니다.{" "}
-                </AboutDetail>
-                <AboutButton>자세히 보기</AboutButton>
-                </AboutText>
-                <AboutImg></AboutImg>
-            </About>
-        </>
+         <About className="inner row">
+            <AboutText>
+            <h1 className="serif">ABOUT 경원재</h1>
+            <AboutTitle>비움과 사색의 공간 경원재 앰배서더 인천</AboutTitle>
+            <AboutDetail>
+                최첨단 국제도시 인천 송도의 현대적인 빌딩 숲 속에서 고풍스러운
+                전통미를 뽐내며 장관을 연출하는 경원재 앰배서더 인천은 특급 호텔
+                서비스가 접목된 5성급 한옥호텔입니다.{" "}
+            </AboutDetail>
+            <AboutButton>자세히 보기</AboutButton>
+            </AboutText>
+            <AboutImg></AboutImg>
+        </About>
     )
 };

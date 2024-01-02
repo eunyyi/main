@@ -23,12 +23,12 @@ const TopMenuLogo = styled.a`
     display: block;
     width: 151px;
     height: 59px;
-    background: url('../logo/typeLogo_wh_2.png') no-repeat center / contain;
+    background: url('/assets/logo/typeLogo_wh_2.png') no-repeat center / contain;
     text-indent: -9999px;
 `;
 
 const TopMenuA = styled.a`
-    color: #000;
+    color: #fff;
 `;
 
 const MainMenu = styled.div`
@@ -67,6 +67,8 @@ const TopBannerImg = styled.img`
 `;
 
 export const HeaderCons = (props) => {
+  return(
+
     <Header>
         <TopBanner>
           <p>경원재 앰버서더 인천 시민 25% 객실 할인</p>
@@ -91,7 +93,7 @@ export const HeaderCons = (props) => {
                   <TopMenuA>웨딩&미팅</TopMenuA>
                 </MainMenuLi>
                 <MainMenuLi>
-                  <a href="sub.html">예약 / 멤버십</a>
+                  <TopMenuA href="sub.html">예약 / 멤버십</TopMenuA>
                 </MainMenuLi>
               </ul>
             </nav>
@@ -99,18 +101,17 @@ export const HeaderCons = (props) => {
           <SubMenu>
             <ul className="row">
               <SubMenuLi>
-                <a href="#!">
-                  로그인
-                </a>
+                <TopMenuA>로그인</TopMenuA>
               </SubMenuLi>
               <SubMenuLi>
-                <a href="join.html">회원가입</a>
+                <TopMenuA>회원가입</TopMenuA>
               </SubMenuLi>
               <SubMenuLi>
-                <a href="#!">KOR</a>
+                <TopMenuA>KOR</TopMenuA>
               </SubMenuLi>
             </ul>
           </SubMenu>
         </TopMenu>
       </Header>
+  );
 };

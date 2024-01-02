@@ -6,10 +6,10 @@ export const TopBtn = styled.div`
 `;
 
 export const TopBtnA = styled.a`
-    display: block;
+    display:block;
     width: 50px;
     height: 50px;
-    border: 1px solid #DBDBDB;
+    border: 1px solid black;
     background: #FFF;
     text-align: center;
     line-height: 50px;
@@ -25,9 +25,11 @@ export const TopBtnImg = styled.img`
 `;
 
 export const TopBtnCons = () => {
-    <TopBtn>
-        <TopBtnA>
-            <TopBtnImg src={downIcon} alt="아래로" />
-        </TopBtnA>
-    </TopBtn>
+    return(
+        <TopBtn>
+            <TopBtnA>
+                <TopBtnImg src={downIcon} alt="위로올라가기" />
+            </TopBtnA>
+        </TopBtn>
+    );
 };

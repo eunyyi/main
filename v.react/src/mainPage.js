@@ -20,14 +20,21 @@ import { Ondol } from './components/main/room-ondol';
 import { Royal } from './components/main/room-royal';
 import { useState } from 'react';
 import styled from "@emotion/styled";
+import { EtcCons } from './components/main/etc';
 
 export const RoomH1 = styled.h1`
+    font-size:45px;
     text-align: center;
     font-weight: 500;
+    margin-bottom:25px;
+
 ;`
 
 export const RoomH4 = styled.h4`
+    font-size:22px;
+    font-weight:400;
     text-align: center;
+    margin-bottom:100px
 ;`
 
 export const RoomLi = styled.li`
@@ -81,48 +88,7 @@ const MainPage = () => {
               roomList.find((el)=>{return el.target === target}).component
             }
         </section>
-        <section className="etc">
-          <h1 className="serif">Dining, Wedding, Party</h1>
-          <h4>
-            엄선된 식재료만을 골라 임금님께 수라를 올리듯 정성껏 요리하며 찬
-            하나하나에도 섬세한 맛을 살려 특별한 미각을 선사하는 수라, <br />
-            송도 신도시의 편리함과 고풍스러운 한옥에서의 특별한 웨딩, 고려시대
-            주심포 방식으로 건축된 경원루
-          </h4>
-          <div className="inner dining">
-            <h2 className="serif">DINING</h2>
-            <div className="swiper-etc">
-              <div className="swiper-scrollbar" />
-              <div className="swiper-wrapper row">
-                <div className="swiper-slide" />
-                <div className="swiper-slide" />
-                <div className="swiper-slide" />
-              </div>
-            </div>
-          </div>
-          <div className="inner wedding">
-            <h2 className="serif">WEDDING</h2>
-            <div className="swiper-etc">
-              <div className="swiper-scrollbar" />
-              <div className="swiper-wrapper row">
-                <div className="swiper-slide" />
-                <div className="swiper-slide" />
-                <div className="swiper-slide" />
-              </div>
-            </div>
-          </div>
-          <div className="inner party">
-            <h2 className="serif">PARTY</h2>
-            <div className="swiper-etc">
-              <div className="swiper-scrollbar" />
-              <div className="swiper-wrapper row">
-                <div className="swiper-slide" />
-                <div className="swiper-slide" />
-                <div className="swiper-slide" />
-              </div>
-            </div>
-          </div>
-        </section>
+        <EtcCons/>
         <section className="loginCons">
           <div className="layer">
             <div className="modal">

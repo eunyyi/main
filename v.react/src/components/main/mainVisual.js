@@ -5,12 +5,11 @@ import styled from "@emotion/styled";
 export const MainVisual = styled.section`
     width: 100%;
     height: 1224px;
-    background: url('././images/mainVisual_resizing.jpg') no-repeat center / cover;
+    background: url('/assets/mainVisual_resizing.jpg') no-repeat center / cover;
     text-align: center;
     color: #FFF;
     padding-top: 370px;
     position: relative;
-    border: 1px solid black;
 `;
 
 export const MainVisualH1 = styled.h1`
@@ -27,7 +26,7 @@ export const MainVisualH3 = styled.h3`
 export const MainVisualDiv = styled.div`
     width: 100%;
     height: 77px;
-    background: url(images/mainVisual_line.png) no-repeat center / cover;
+    background: url('/assets/mainVisual_line.png') no-repeat center / cover;
     position: absolute;
     bottom: 0;
 `;
@@ -42,5 +41,5 @@ export const MainVisualCons = () => {
             </MainVisualH3>
             <MainVisualDiv />
         </MainVisual>
-    )
+    );
 };

@@ -13,6 +13,7 @@ export const Floor = styled.section`
 `;
 
 export const FloorH1 = styled.h1`
+    font-size:45px;
     font-weight: 500;
     margin: 34px 0 60px;
 `;
@@ -31,6 +32,7 @@ export const FloorBtn = styled.button`
     font-weight: 400;
     cursor: pointer;
     font-family: Noto Sans KR; 
+    background:none;
 `;
 
 export const FloorImg = styled.img`
