@@ -9,7 +9,6 @@ import Double5 from '../../images/double/double5.jpg';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-
 export const Double = () => {
     const [nav1, setNav1] = useState(null);
     const [nav2, setNav2] = useState(null);
@@ -21,6 +20,15 @@ export const Double = () => {
         setNav2(slider2);
     });
 
+    const SliderImg = styled.img`
+
+      width:100%;
+      opacity:.4;
+
+      &:hover {
+        opacity:1;
+      }
+    `;
     const settingsMain = {
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -63,7 +71,7 @@ export const Double = () => {
           source: Double5
         }
       ];
-    
+  
     return (
      <div className="slider-wrapper">
         <Slider
@@ -91,7 +99,7 @@ export const Double = () => {
                 {slidesData.map((slide) =>
 
                 <div className="slick-slide" key={slide.id} style={{width:'20%'}}>
-                    <img className="slick-slide-image" src={slide.source} style={{width:'100%', opacity:'.4'}}/>
+                    <SliderImg className="slick-slide-image" src={slide.source}/>
                 </div>
                 )}
 

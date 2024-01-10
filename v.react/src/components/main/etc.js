@@ -34,6 +34,7 @@ export const EtcH2 = styled.h2`
     font-weight: 700;
     position: relative;
     top: 25px; 
+    z-index: 99;
 `;
 
 
@@ -56,6 +57,38 @@ export const SlideImg3 = styled.div`
     width:630px;
     height: 497px;
     background: url('/assets/dining/dining3.jpg') no-repeat center / cover;
+`;
+export const SlideImg4 = styled.div`
+    width:630px;
+    height: 497px;
+    background: url('/assets/wedding/wedding1.jpg') no-repeat center / cover;
+`;
+export const SlideImg5 = styled.div`
+    width:630px;
+    height: 497px;
+    background: url('/assets/wedding/wedding2.jpg') no-repeat center / cover;
+    margin: 0 10px; 
+`;
+export const SlideImg6 = styled.div`
+    width:630px;
+    height: 497px;
+    background: url('/assets/wedding/wedding3.jpg') no-repeat center / cover;
+`;
+export const SlideImg7 = styled.div`
+    width:630px;
+    height: 497px;
+    background: url('/assets/party/party1.jpg') no-repeat center / cover;
+`;
+export const SlideImg8 = styled.div`
+    width:630px;
+    height: 497px;
+    background: url('/assets/party/party2.jpg') no-repeat center / cover;
+    margin: 0 10px; 
+`;
+export const SlideImg9 = styled.div`
+    width:630px;
+    height: 497px;
+    background: url('/assets/party/party3.jpg') no-repeat center / cover;
 `;
 
 export const EtcCons = () => {
@@ -99,28 +132,44 @@ export const EtcCons = () => {
                   </Slide>
             </Slider>   
           </EtcInner>
-          {/* <div className="inner wedding">
-            <h2 className="serif">WEDDING</h2>
-            <div className="swiper-etc">
-              <div className="swiper-scrollbar" />
-              <div className="SwiperSlide row">
-                <div className="swiper-slide" />
-                <div className="swiper-slide" />
-                <div className="swiper-slide" />
-              </div>
-            </div>
-          </div>
-          <div className="inner party">
-            <h2 className="serif">PARTY</h2>
-            <div className="swiper-etc">
-              <div className="swiper-scrollbar" />
-              <div className="SwiperSlide row">
-                <div className="swiper-slide" />
-                <div className="swiper-slide" />
-                <div className="swiper-slide" />
-              </div>
-            </div>
-          </div> */}
+          <EtcInner>
+            <EtcH2 className="serif" >WEDDING</EtcH2>
+            <Slider {...settings}
+            style={{width: '100%',
+                height: '568px',
+                background: 'rgba(240, 240, 240, 0.80)',
+                paddingTop: '45px',}} 
+            className="slider">
+                  <Slide>
+                    <SlideImg4/>
+                  </Slide>
+                  <Slide>
+                    <SlideImg5/>
+                  </Slide>
+                  <Slide>              
+                    <SlideImg6/>
+                  </Slide>
+            </Slider>   
+          </EtcInner>
+          <EtcInner>
+            <EtcH2 className="serif" >PARTY</EtcH2>
+            <Slider {...settings}
+            style={{width: '100%',
+                height: '568px',
+                background: 'rgba(240, 240, 240, 0.80)',
+                paddingTop: '45px',}} 
+            className="slider">
+                  <Slide>
+                    <SlideImg7/>
+                  </Slide>
+                  <Slide>
+                    <SlideImg8/>
+                  </Slide>
+                  <Slide>              
+                    <SlideImg9/>
+                  </Slide>
+            </Slider>   
+          </EtcInner>
         </Etc>
     );
 };

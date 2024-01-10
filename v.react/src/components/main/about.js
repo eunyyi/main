@@ -39,11 +39,17 @@ export const AboutButton = styled.button`
     font-family: Noto Sans KR; 
 `;
 
+export const AboutH1 =styled.h1`
+    font-size: 45px;
+    font-weight: 400;
+    margin-bottom: 25px;
+`;
+
 export const AboutCons = () => {
     return(
          <About className="inner row">
             <AboutText>
-            <h1 className="serif">ABOUT 경원재</h1>
+            <AboutH1 className="serif">ABOUT 경원재</AboutH1>
             <AboutTitle>비움과 사색의 공간 경원재 앰배서더 인천</AboutTitle>
             <AboutDetail>
                 최첨단 국제도시 인천 송도의 현대적인 빌딩 숲 속에서 고풍스러운

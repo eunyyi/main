@@ -1,5 +1,7 @@
 import styled from "@emotion/styled";
 import closeIcon from '../icons/close2.png';
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Header = styled.header`
     width: 100%;
@@ -67,6 +69,32 @@ const TopBannerImg = styled.img`
 `;
 
 export const HeaderCons = (props) => {
+
+  const [scrollPosition, setScrollPosition] = useState(0);
+  let currentUrl = window.location.pathname;
+  const [topMenu, setTopMenu] = useState("transparent");
+
+  const updateScroll = () => {
+    setScrollPosition(window.scrollY || document.documentElement.scrollTop);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", updateScroll);
+    return () => {
+      window.removeEventListener("scroll", updateScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (currentUrl === "/" && scrollPosition < 1000) {
+      setTopMenu("#ffffff"); 
+    } else {
+      setTopMenu("transparent"); 
+    }
+  }, [scrollPosition, currentUrl]);
+
+
+
   return(
 
     <Header>
@@ -93,7 +121,7 @@ export const HeaderCons = (props) => {
                   <TopMenuA>웨딩&미팅</TopMenuA>
                 </MainMenuLi>
                 <MainMenuLi>
-                  <TopMenuA href="sub.html">예약 / 멤버십</TopMenuA>
+                  <Link to={"/reservation"} style={{color: '#fff'}}>예약 / 멤버십</Link>
                 </MainMenuLi>
               </ul>
             </nav>

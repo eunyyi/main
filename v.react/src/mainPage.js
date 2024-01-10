@@ -1,12 +1,4 @@
 
-import naver from './icons/naver.png';
-import kakao from './icons/kakao.png';
-import google from './icons/google.png';
-import accorLogo from './icons/Accor_Logo.png';
-import ambassaLogo from './icons/ambassador_logo.png';
-import tripLogo from './icons/tripAdvisor.png';
-import facebookLogo from './icons/faceBook.png';
-import instaLogo from './icons/insta.png';
 import { HeaderCons } from './components/header';
 import { TopBtnCons } from './components/topBtn';
 import { MainVisualCons } from './components/main/mainVisual';
@@ -21,6 +13,7 @@ import { Royal } from './components/main/room-royal';
 import { useState } from 'react';
 import styled from "@emotion/styled";
 import { EtcCons } from './components/main/etc';
+import { FooterCons } from './components/footer';
 
 export const RoomH1 = styled.h1`
     font-size:45px;
@@ -39,11 +32,22 @@ export const RoomH4 = styled.h4`
 
 export const RoomLi = styled.li`
     padding: 17px 20px;
+
+    &:hover {
+      background-color: #695239;
+
+      a{
+        color:#fff;
+      }
+    }
+
+    
 `;
 
 export const RoomA = styled.a`
     color: #000;
     font-size: 24px;
+
 `;
 
 const MainPage = () => {
@@ -89,7 +93,7 @@ const MainPage = () => {
             }
         </section>
         <EtcCons/>
-        <section className="loginCons">
+        {/* <section className="loginCons">
           <div className="layer">
             <div className="modal">
               <h2 className="serif">로그인</h2>
@@ -120,39 +124,8 @@ const MainPage = () => {
             </div>
           </div>
           <div id="dim"></div>
-        </section>
-        <footer>
-          <div className="inner">
-            <ul className="row">
-              <li>해외호텔예약</li>
-              <li>고객센터</li>
-              <li>개인정보처리방침</li>
-              <li>멤버십 약관</li>
-              <li>채용</li>
-              <li>사이트맵</li>
-            </ul>
-            <div className="icon row">
-              <div className="row left">
-                <img src={accorLogo} alt="" />
-                <img src={ambassaLogo} alt="" />
-              </div>
-              <div className="row right">
-                <img src={tripLogo} alt="" />
-                <img src={facebookLogo} alt="" />
-                <img src={instaLogo} alt="" />
-              </div>
-            </div>
-            <div className="text row">
-              <p>인천경제자유구역청</p>
-              <p>인천광역시 연수구 테크노파크로 200</p>
-              <p>TEL. 032-729-1101</p>
-              <p>사업자등록번호 379-83-00011</p>
-              <p>통신판매신고번호 인천연수구0193호</p>
-              <p>대표 이원재</p>
-            </div>
-            <p>Copyright (c) 2023 Ambassador Hotel Group. All rights reserved.</p>
-          </div>
-        </footer>
+        </section> */}
+        <FooterCons/>
       </main>
     </>
 );
