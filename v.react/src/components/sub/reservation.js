@@ -1,6 +1,17 @@
 import styled from "@emotion/styled";
 import Down from "../../images/icons/down.svg";
 
+const Reser = styled.section`
+    width: 70.833vw; 
+    margin:0 auto;   
+    padding-top:210px;
+`;
+
+const ReserDiv = styled.div`
+    height: 170px;
+    align-items: center;
+`;
+
 const ReserH1 = styled.h1`
     font-size: 45px;
     font-weight: 400;
@@ -14,17 +25,6 @@ const ReserH4 = styled.h4`
     font-weight: 400;
     margin-bottom: 100px;
     text-align: center;
-`;
-
-const Reser = styled.section`
-    width: 70.833vw; 
-    margin:0 auto;   
-    padding-top:210px;
-`;
-
-const ReserDiv = styled.div`
-    height: 170px;
-    align-items: center;
 `;
 
 const SelectCons = styled.div`  
@@ -129,6 +129,53 @@ const AdultInput = styled.input`
     margin: 0 20px;
 `;
 
+const Reservation = styled.div`
+    text-align: center;
+    margin-top: 100px;
+    display: none;
+`;
+
+const ReservationH2 = styled.h2`
+    font-size: 30px;
+    color: #1A1A1A;
+    font-weight: 400;
+    margin: 40px 0 50px;
+`;
+
+const ReservationDiv = styled.div`
+    width: 440px;
+    position: relative;
+`;
+
+const ReservationImg = styled.img`
+    width: 100%;
+    height: 220px;
+`;
+
+const ReservationP = styled.p`
+    font-size: 20px;
+    font-weight: 400;
+    color: #1A1A1A;
+    margin: 46px 0;
+`;
+
+const ReservationSpan = styled.span`
+    font-size: 15px;
+    font-weight: 400;
+    display: inline-block;
+`;
+
+const ReservationBtn = styled.button`
+    width: 99px;
+    height: 44px;
+    background: #FFF;
+    border: 1px solid #8D8D8D;
+    color: #1A1A1A;
+    position: absolute;
+    top: 440px;
+    right: 12px;
+    cursor: pointer;
+`;
 export const ResCons = () => {
 
     return(
@@ -136,7 +183,7 @@ export const ResCons = () => {
             <ReserH1 className="serif">RESERVATION</ReserH1>
             <ReserH4>아래 항목들을 선택해주시면 예약 가능한 객실이 안내됩니다.</ReserH4>
             <ReserDiv className="row"  style={{border:'1px solid black'}}>
-                <SelectCons className="select cons">
+                <SelectCons>
                 <ReserP>호텔 선택</ReserP>
                 <Name>
                     <NameDiv className="row" onclick="downName();">
@@ -155,7 +202,7 @@ export const ResCons = () => {
                     </div>
                 </Name>
                 </SelectCons>
-                <FindCons className="find cons row">
+                <FindCons className="row">
                     <FindCheckIn>
                         <ReserP>체크인</ReserP>
                         <CheckIn
@@ -164,7 +211,7 @@ export const ResCons = () => {
                         id="datepicker"
                         />
                     </FindCheckIn>
-                    <div className="find-checkOut">
+                    <div>
                         <ReserP>체크아웃</ReserP>
                         <CheckOut
                         type="text"
@@ -173,7 +220,7 @@ export const ResCons = () => {
                         />
                     </div>
                 </FindCons>
-                <FindCons className="cons row">
+                <FindCons className="row">
                 <div className="room" style={{width:'34px',textAlign:'center'}}>
                     <ReserP>객실</ReserP>
                     <ReserP>1</ReserP>
@@ -195,7 +242,7 @@ export const ResCons = () => {
                         </AdultBtn>
                     </div>
                 </AdultDiv>
-                <div className="kid" style={{textAlign:'center'}}>
+                <div style={{textAlign:'center'}}>
                     <ReserP>소인</ReserP>
                     <div className="row" style={{alignItems:'center'}}>
                     <AdultBtn id="down2" onclick="down2()">
@@ -215,40 +262,40 @@ export const ResCons = () => {
                 </FindCons>
                 <ReserBtn onclick="result();">객실조회</ReserBtn>
             </ReserDiv>
-            <div className="reservation inner">
-                <h2 className="serif">예약 가능한 객실</h2>
-                <div className="row">
-                <div>
-                    <p>디럭스 온돌</p>
-                    <img src="images/ondol/ondol_main.jpg" alt="" />
-                    <span className="person">최대 2인</span>
-                    <span>
-                    기본제공 : 미니바 아이템, 네스프레소 커피캡슐, 유·무선 인터넷 등
-                    </span>
-                    <button>예약하기</button>
+            {/* <Reservation className="reservation inner">
+                <ReservationH2 className="serif">예약 가능한 객실</ReservationH2>
+                <div className="row" style={{justifyContent:'space-between'}}>
+                    <ReservationDiv>
+                        <ReservationP>디럭스 온돌</ReservationP>
+                        <ReservationImg src="images/ondol/ondol_main.jpg" alt="" />
+                        <ReservationSpan className="person" style={{margin:'16px 0 20px'}}>최대 2인</ReservationSpan>
+                        <ReservationSpan>
+                        기본제공 : 미니바 아이템, 네스프레소 커피캡슐, 유·무선 인터넷 등
+                        </ReservationSpan>
+                        <ReservationBtn>예약하기</ReservationBtn>
+                    </ReservationDiv>
+                    <ReservationDiv>
+                        <ReservationP>디럭스 스위트</ReservationP>
+                        <ReservationImg src="images/sweet/sweet3.jpg" alt="" />
+                        <ReservationSpan className="person" style={{margin:'16px 0 20px'}}>최대 4인</ReservationSpan>
+                        <ReservationSpan>
+                        기본제공 : 미니바 아이템, 네스프레소 커피캡슐, 유·무선 인터넷,
+                        전자레인지 등
+                        </ReservationSpan>
+                        <ReservationBtn>예약하기</ReservationBtn>
+                    </ReservationDiv>
+                    <ReservationDiv>
+                        <ReservationP>로얄 스위트</ReservationP>
+                        <ReservationImg src="images/royal/royal_main.jpg" alt="" />
+                        <ReservationSpan className="person" style={{margin:'16px 0 20px'}}>최대 6인</ReservationSpan>
+                        <ReservationSpan>
+                        기본제공 : 미니바 아이템, 네스프레소 커피캡슐, 유·무선 인터넷,
+                        탄산수 얼음 정수기 등
+                        </ReservationSpan>
+                        <ReservationBtn>예약하기</ReservationBtn>
+                    </ReservationDiv>
                 </div>
-                <div>
-                    <p>디럭스 스위트</p>
-                    <img src="images/sweet/sweet3.jpg" alt="" />
-                    <span className="person">최대 4인</span>
-                    <span>
-                    기본제공 : 미니바 아이템, 네스프레소 커피캡슐, 유·무선 인터넷,
-                    전자레인지 등
-                    </span>
-                    <button>예약하기</button>
-                </div>
-                <div>
-                    <p>로얄 스위트</p>
-                    <img src="images/royal/royal_main.jpg" alt="" />
-                    <span className="person">최대 6인</span>
-                    <span>
-                    기본제공 : 미니바 아이템, 네스프레소 커피캡슐, 유·무선 인터넷,
-                    탄산수 얼음 정수기 등
-                    </span>
-                    <button>예약하기</button>
-                </div>
-                </div>
-            </div>
+            </Reservation> */}
         </Reser>
     );
 }

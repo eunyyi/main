@@ -81,7 +81,9 @@ export const HeaderCons2 = (props) => {
           <TopMenu className="row">
             <MainMenu className="row">
               <h1>
-                <TopMenuLogo>로고</TopMenuLogo>
+                <Link to={"/"}>
+                  <TopMenuLogo>로고</TopMenuLogo>
+                </Link>
               </h1>
               <nav>
                 <ul className="row">
@@ -95,7 +97,7 @@ export const HeaderCons2 = (props) => {
                     <TopMenuA>웨딩&미팅</TopMenuA>
                   </MainMenuLi>
                   <MainMenuLi>
-                    <Link to={"/reservation"} style={{color: '#fff'}}>예약 / 멤버십</Link>
+                    <Link to={"/reservation"} style={{color: '#000'}}>예약 / 멤버십</Link>
                   </MainMenuLi>
                 </ul>
               </nav>
@@ -106,7 +108,9 @@ export const HeaderCons2 = (props) => {
                   <TopMenuA>로그인</TopMenuA>
                 </SubMenuLi>
                 <SubMenuLi>
-                  <TopMenuA>회원가입</TopMenuA>
+                  <Link to={"/join"}>
+                    <TopMenuA>회원가입</TopMenuA>
+                  </Link>
                 </SubMenuLi>
                 <SubMenuLi>
                   <TopMenuA>KOR</TopMenuA>

@@ -55,13 +55,13 @@ export const FooterCons = () => {
                 <img src={accorLogo} alt="" style={{width:'70px', height:'57px'}}/>
                 <img src={ambassaLogo} alt="" style={{width:'120px', height:'120px'}}/>
               </div>
-              <div className="row right">
+              <div className="row">
                 <img src={tripLogo} alt="" style={{width:'70px', height:'70px'}}/>
                 <img src={facebookLogo} alt="" style={{width:'70px', height:'70px', margin: '0 20px'}}/>
                 <img src={instaLogo} alt="" style={{width:'70px', height:'70px'}}/>
               </div>
             </FooterIcon>
-            <div className="text row">
+            <div className="row">
               <FooterP>인천경제자유구역청</FooterP>
               <FooterP>인천광역시 연수구 테크노파크로 200</FooterP>
               <FooterP>TEL. 032-729-1101</FooterP>

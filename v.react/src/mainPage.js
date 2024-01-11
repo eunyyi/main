@@ -125,8 +125,8 @@ const MainPage = () => {
           </div>
           <div id="dim"></div>
         </section> */}
-        <FooterCons/>
       </main>
+      <FooterCons/>
     </>
 );
 }

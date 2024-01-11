@@ -132,7 +132,9 @@ export const HeaderCons = (props) => {
                 <TopMenuA>로그인</TopMenuA>
               </SubMenuLi>
               <SubMenuLi>
-                <TopMenuA>회원가입</TopMenuA>
+                <Link to={"/join"}>
+                  <TopMenuA>회원가입</TopMenuA>
+                </Link>
               </SubMenuLi>
               <SubMenuLi>
                 <TopMenuA>KOR</TopMenuA>
