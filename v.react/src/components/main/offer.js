@@ -14,7 +14,7 @@ export const H4 = styled.h4`
     
 //sec.offer
 export const Offers = styled.section`
-    width: 67.552vw;
+    width: 100%;
     margin: 0 auto;
     margin-top: 220px;
     color: #1A1A1A;
@@ -22,18 +22,18 @@ export const Offers = styled.section`
 `;
 
 export const OffersUl = styled.ul`
-    width: 67.552vw;
-    height: 578px;
+    width: 1297px;
+    margin: 0 auto;
+    height: auto;
     flex-wrap: wrap;
-    border: 1px solid #000;
+    justify-content:space-between;
 `;
 
 export const OffersLi = styled.li`
     width: 419px;
     height: 279px;
     margin-bottom: 20px;
-    margin-right: 10px;
-    border: 1px solid #000;
+    /* margin-right: 10px; */
 
     :nth-child(1) {
         background: url('/assets/offers/01.jpg') no-repeat center / cover;
@@ -55,22 +55,22 @@ export const OffersLi = styled.li`
     }
 
     :nth-child(1):hover {
-        background: url('./offers/after1.png') no-repeat center / cover;
+        background: url('/assets/offers/after1.png') no-repeat center / cover;
     }
     :nth-child(2):hover {
-        background: url('./offers/after2.png') no-repeat center / cover;
+        background: url('/assets/offers/after2.png') no-repeat center / cover;
     }
     :nth-child(3):hover {
-        background: url('./offers/after3.png') no-repeat center / cover;
+        background: url('/assets/offers/after3.png') no-repeat center / cover;
     }
     :nth-child(4):hover {
-        background: url('./offers/after4.png') no-repeat center / cover;
+        background: url('/assets/offers/after4.png') no-repeat center / cover;
     }
     :nth-child(5):hover {
-        background: url('./offers/after5.png') no-repeat center / cover;
+        background: url('/assets/offers/after5.png') no-repeat center / cover;
     }
     :nth-child(6):hover {
-        background: url('./offers/after6.png') no-repeat center / cover;
+        background: url('/assets/offers/after6.png') no-repeat center / cover;
     }
 `;
 

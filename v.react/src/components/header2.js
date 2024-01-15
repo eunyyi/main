@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import closeIcon from '../icons/close2.png';
+import closeIcon from '../images/icons/close2.png';
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 

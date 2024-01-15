@@ -1,5 +1,14 @@
 import styled from "@emotion/styled";
 import Down from "../../images/icons/down.svg";
+import Calendar from 'react-calendar';
+import { useState } from "react";
+import Modal from 'react-modal';
+import moment from "moment";
+import "react-calendar/dist/Calendar.css";
+import "../../custom.css"
+import Ondol from "../../images/ondol/ondol_main.jpg";
+import Sweet from "../../images/sweet/sweet3.jpg";
+import Royal from "../../images/royal/royal_main.jpg";
 
 const Reser = styled.section`
     width: 70.833vw; 
@@ -27,23 +36,9 @@ const ReserH4 = styled.h4`
     text-align: center;
 `;
 
-const SelectCons = styled.div`  
-    padding: 20px 50px;
-`;
-
-const Name = styled.div`
-    height: 24px;
-    overflow: hidden;
-`;
-
-const NameDiv = styled.div`
-    width: 212px;
-    margin-bottom: 10px;
-    justify-content: space-between;
-`;
-
 const FindCheckIn = styled.div`
     margin-right: 75px;
+    position:relative;
 `;
 
 const ReserP = styled.p`
@@ -56,40 +51,36 @@ const ReserP = styled.p`
 const FindCons = styled.div`    
     border-left: 1px solid #D9D9D9;
     border-right: 1px solid #D9D9D9;
-    padding:0 50px;
+    padding:0 60px;
 `;
 
-const CheckIn = styled.input`
-    width: 127px;
+const CheckIn = styled.button`
+    width: 130px;
     height: 45px;
     font-family: inherit;
     font-size: 15px;
     font-weight: 700;
     border: none; 
+    background:none;
+    color:#6B6A6A;
 
     &:focus {
         outline: none;
     }
-
-    &::placeholder {
-        color: #1a1a1a;
-    }
 `;
 
-const CheckOut = styled.input`
-    width: 127px;
+const CheckOut = styled.button`
+    width: 130px;
     height: 45px;
     font-family: inherit;
     font-size: 15px;
     font-weight: 700;
     border: none;
+    background:none;
+    color:#6B6A6A;
 
     &:focus {
         outline: none;
-    }
-
-    &::placeholder {
-        color: #1a1a1a;
     }
 `;
 
@@ -108,6 +99,8 @@ const ReserBtn = styled.button`
     font-size: 15px;
     font-weight: 700;
     border: none;
+    margin-left:50px;
+    cursor: pointer;
 `;
 
 const AdultBtn = styled.button`
@@ -118,9 +111,9 @@ const AdultBtn = styled.button`
     border:none;
 `;
 
-const AdultInput = styled.input`
+const AdultP = styled.p`
     width: 9px;
-    height: 15px;
+    height: 21px;
     border: none;
     text-align: center;
     color: #1A1A1A;
@@ -132,7 +125,7 @@ const AdultInput = styled.input`
 const Reservation = styled.div`
     text-align: center;
     margin-top: 100px;
-    display: none;
+    display: ${(props) => (props.moreOpen ? "block" : "none")};
 `;
 
 const ReservationH2 = styled.h2`
@@ -176,14 +169,82 @@ const ReservationBtn = styled.button`
     right: 12px;
     cursor: pointer;
 `;
+
+const CalendarWrapper = styled.div`
+  z-index: 11;
+  position: absolute;
+  top: 150%;
+  left: 0;
+  display: ${(props) => (props.isOpen ? "block" : "none")};
+`;
+
 export const ResCons = () => {
+    const [nowDate, setNowDate] = useState("날짜를 선택해주세요");
+    const [nowDate1, setNowDate1] = useState("날짜를 선택해주세요");
+    const [value, onChange] = useState(new Date());
+    const [isOpen, setIsOpen] = useState(false);
+    const [isOpen1, setIsOpen1] = useState(false);
+    const [moreOpen, setMoreOpen] = useState(false);
+
+    const clickMore = () => {
+        setMoreOpen(!moreOpen);
+    };
+
+    const handleToggleCalendar = () => {
+        setIsOpen(!isOpen);
+    };
+    const handleToggleCalendar1 = () => {
+        setIsOpen1(!isOpen1);
+    };
+
+    const handleDateChange = (selectedDate) => {
+        onChange(selectedDate);
+        setIsOpen(false);
+        setNowDate(moment(selectedDate).format("YYYY년 MM월 DD일"));
+    };
+    const handleDateChange1 = (selectedDate) => {
+        onChange(selectedDate);
+        setIsOpen1(false);
+        setNowDate1(moment(selectedDate).format("YYYY년 MM월 DD일"));
+    };
+
+    const [count1, setCount1] = useState(1);
+
+    const onIncrease1 = () => {
+        setCount1(prevCount => prevCount + 1);
+
+    };
+
+    const onDecrease1 = () => {
+
+        if (setCount1 != 1) {
+            setCount1(prevCount => prevCount - 1);
+          }
+    };
+
+
+    const [count2, setCount2] = useState(1);
+
+    const onIncrease2 = () => {
+
+        if (setCount2 !=9 ) {
+            setCount2(prevCount => prevCount + 1);
+          }
+    };
+
+    const onDecrease2 = () => {
+
+        if (setCount2 != 1) {
+            setCount2(prevCount => prevCount - 1);
+          }
+    };
 
     return(
         <Reser>
             <ReserH1 className="serif">RESERVATION</ReserH1>
             <ReserH4>아래 항목들을 선택해주시면 예약 가능한 객실이 안내됩니다.</ReserH4>
-            <ReserDiv className="row"  style={{border:'1px solid black'}}>
-                <SelectCons>
+            <ReserDiv className="row">
+                {/* <SelectCons>
                 <ReserP>호텔 선택</ReserP>
                 <Name>
                     <NameDiv className="row" onclick="downName();">
@@ -201,73 +262,67 @@ export const ResCons = () => {
                         </li>
                     </div>
                 </Name>
-                </SelectCons>
+                </SelectCons> */}
                 <FindCons className="row">
                     <FindCheckIn>
                         <ReserP>체크인</ReserP>
                         <CheckIn
-                        type="text"
-                        placeholder="날짜를 선택해주세요"
-                        id="datepicker"
-                        />
+                        onClick={handleToggleCalendar}>{nowDate}</CheckIn>
+                        <CalendarWrapper isOpen={isOpen} >
+                            <Calendar 
+                            onChange={handleDateChange} 
+                            value={value} 
+                            formatDay={(locale, date) => moment(date).format("DD")}
+                            >{moment(value).format("YYYY년 MM월 DD일")} </Calendar>
+                        </CalendarWrapper>
                     </FindCheckIn>
-                    <div>
+                    <FindCheckIn>
                         <ReserP>체크아웃</ReserP>
                         <CheckOut
-                        type="text"
-                        placeholder="날짜를 선택해주세요"
-                        id="datepicker2"
-                        />
-                    </div>
+                        onClick={handleToggleCalendar1}>{nowDate1}</CheckOut>
+                        <CalendarWrapper isOpen={isOpen1}>
+                            <Calendar onChange={handleDateChange1} value={value} formatDay={(locale, date) => moment(date).format("DD")}>{moment(value).format("YYYY년 MM월 DD일")} </Calendar>
+                        </CalendarWrapper>
+                    </FindCheckIn>
                 </FindCons>
                 <FindCons className="row">
-                <div className="room" style={{width:'34px',textAlign:'center'}}>
+                <div style={{width:'34px',textAlign:'center'}}>
                     <ReserP>객실</ReserP>
                     <ReserP>1</ReserP>
                 </div>
                 <AdultDiv>
                     <ReserP>성인</ReserP>
-                    <div className="row" style={{alignItems:'center'}}>
-                        <AdultBtn id="down" onclick="down()">
+                    <div className="row" style={{alignItems:'center', marginTop:'20px'}}>
+                        <AdultBtn id="down" onClick={onDecrease1}>
                             -
                         </AdultBtn>
-                        <AdultInput
-                            type="text"
-                            name="quantity"
-                            id="quantity"
-                            defaultValue={1}
-                        />
-                        <AdultBtn id="up" onclick="up()">
+                        <AdultP>{count1}</AdultP>
+                        <AdultBtn id="up" onClick={onIncrease1}>
                             +
                         </AdultBtn>
                     </div>
                 </AdultDiv>
                 <div style={{textAlign:'center'}}>
                     <ReserP>소인</ReserP>
-                    <div className="row" style={{alignItems:'center'}}>
-                    <AdultBtn id="down2" onclick="down2()">
+                    <div className="row" style={{alignItems:'center' , marginTop:'20px'}}>
+                    <AdultBtn id="down2" onClick={onDecrease2}>
                         -
                     </AdultBtn>
-                    <AdultInput
-                        type="text"
-                        name="quantity2"
-                        id="quantity2"
-                        defaultValue={1}
-                    />
-                    <AdultBtn id="up2" onclick="up2()">
+                    <AdultP>{count2}</AdultP>
+                    <AdultBtn id="up2" onClick={onIncrease2}>
                         +
                     </AdultBtn>
                     </div>
                 </div>
                 </FindCons>
-                <ReserBtn onclick="result();">객실조회</ReserBtn>
+                <ReserBtn onClick={clickMore}>객실조회</ReserBtn>
             </ReserDiv>
-            {/* <Reservation className="reservation inner">
+            <Reservation className="reservation inner" moreOpen={moreOpen}>
                 <ReservationH2 className="serif">예약 가능한 객실</ReservationH2>
                 <div className="row" style={{justifyContent:'space-between'}}>
                     <ReservationDiv>
                         <ReservationP>디럭스 온돌</ReservationP>
-                        <ReservationImg src="images/ondol/ondol_main.jpg" alt="" />
+                        <ReservationImg src={Ondol} alt="" />
                         <ReservationSpan className="person" style={{margin:'16px 0 20px'}}>최대 2인</ReservationSpan>
                         <ReservationSpan>
                         기본제공 : 미니바 아이템, 네스프레소 커피캡슐, 유·무선 인터넷 등
@@ -276,7 +331,7 @@ export const ResCons = () => {
                     </ReservationDiv>
                     <ReservationDiv>
                         <ReservationP>디럭스 스위트</ReservationP>
-                        <ReservationImg src="images/sweet/sweet3.jpg" alt="" />
+                        <ReservationImg src={Sweet} alt="" />
                         <ReservationSpan className="person" style={{margin:'16px 0 20px'}}>최대 4인</ReservationSpan>
                         <ReservationSpan>
                         기본제공 : 미니바 아이템, 네스프레소 커피캡슐, 유·무선 인터넷,
@@ -286,7 +341,7 @@ export const ResCons = () => {
                     </ReservationDiv>
                     <ReservationDiv>
                         <ReservationP>로얄 스위트</ReservationP>
-                        <ReservationImg src="images/royal/royal_main.jpg" alt="" />
+                        <ReservationImg src={Royal} alt="" />
                         <ReservationSpan className="person" style={{margin:'16px 0 20px'}}>최대 6인</ReservationSpan>
                         <ReservationSpan>
                         기본제공 : 미니바 아이템, 네스프레소 커피캡슐, 유·무선 인터넷,
@@ -295,7 +350,7 @@ export const ResCons = () => {
                         <ReservationBtn>예약하기</ReservationBtn>
                     </ReservationDiv>
                 </div>
-            </Reservation> */}
+            </Reservation>
         </Reser>
     );
 }

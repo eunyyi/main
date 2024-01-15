@@ -1,8 +1,10 @@
 import styled from "@emotion/styled";
-import downIcon from '../icons/down.svg';
+import downIcon from '../images/icons/down.svg';
+import { useState, useEffect } from "react";
 
 export const TopBtn = styled.div`
     opacity:1;
+    cursor: pointer;
 `;
 
 export const TopBtnA = styled.a`
@@ -25,8 +27,32 @@ export const TopBtnImg = styled.img`
 `;
 
 export const TopBtnCons = () => {
+    const [showButton, setShowButton] = useState(false);
+
+    const scrollToTop = () => {
+        window.scroll({
+            top: 0,
+            behavior: 'smooth'
+        })
+
+    }
+    useEffect(() => {
+        const handleShowButton = () => {
+            if (window.scrollY > 500) {
+                setShowButton(true)
+            } else {
+                setShowButton(false)
+            }
+        }
+
+        console.log(window.scrollY)
+        window.addEventListener("scroll", handleShowButton)
+        return () => {
+            window.removeEventListener("scroll", handleShowButton)
+        }
+    }, [])
     return(
-        <TopBtn>
+        <TopBtn onClick={scrollToTop}>
             <TopBtnA>
                 <TopBtnImg src={downIcon} alt="위로올라가기" />
             </TopBtnA>

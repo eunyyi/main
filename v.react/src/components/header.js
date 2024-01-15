@@ -1,7 +1,9 @@
 import styled from "@emotion/styled";
-import closeIcon from '../icons/close2.png';
+import closeIcon from '../images/icons/close2.png';
 import { useState, useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
 import { Link } from "react-router-dom";
+import "./TopMenu.css";
 
 const Header = styled.header`
     width: 100%;
@@ -68,31 +70,67 @@ const TopBannerImg = styled.img`
     transform: translateY(-50%);
 `;
 
+
 export const HeaderCons = (props) => {
 
-  const [scrollPosition, setScrollPosition] = useState(0);
-  let currentUrl = window.location.pathname;
-  const [topMenu, setTopMenu] = useState("transparent");
+  // const topMenu = document.querySelector(".topMenu");
 
-  const updateScroll = () => {
-    setScrollPosition(window.scrollY || document.documentElement.scrollTop);
-  };
+  // // const [position,setScroll] = useState(0);
 
-  useEffect(() => {
-    window.addEventListener("scroll", updateScroll);
-    return () => {
-      window.removeEventListener("scroll", updateScroll);
-    };
-  }, []);
+  // const [scrollPosition, setScrollPosition] = useState(0);
 
-  useEffect(() => {
-    if (currentUrl === "/" && scrollPosition < 1000) {
-      setTopMenu("#ffffff"); 
-    } else {
-      setTopMenu("transparent"); 
-    }
-  }, [scrollPosition, currentUrl]);
+  // // function onScroll() {
+  // //   setScroll(window.scrollY);
+  // // console.log(position);
+  // // }
 
+  // useEffect(()=>{
+  //   window.addEventListener('scroll',updateScroll);
+  //   return () =>{
+  //     window.removeEventListener('scroll',updateScroll);
+  //   }
+  // },[]);
+
+  // const updateScroll = () => {
+  //   setScrollPosition(window.scrollY || document.documentElement.scrollTop);
+  // };
+
+  // // useEffect(() => {
+  // //   if (currentUrl === "/" && scrollPosition > 1000) {
+  // //     topMenu.classList.add('scroll');
+  // //   } else {
+  // //     topMenu.classList.remove('scroll');
+  // //   }
+  // // }, [scrollPosition, currentUrl]);
+
+
+  // // const navigate = useNavigate();
+  // let currentUrl = window.location.pathname;
+
+
+  // // const [scrollPosition, setScrollPosition] = useState(0);
+  // // // const [headerColor, setHeaderColor] = useState("transparent");
+
+  // // // Scroll 위치를 감지
+  // // const updateScroll = () => {
+  // //   setScrollPosition(window.scrollY || document.documentElement.scrollTop);
+  // // };
+
+  // // useEffect(() => {
+  // //   window.addEventListener("scroll", updateScroll);
+  // //   return () => {
+  // //     window.removeEventListener("scroll", updateScroll);
+  // //   };
+  // // }, []);
+
+  //   // scroll 위치가 100이하라면 투명한 배경색을 지정하고, 아니면 흰색을 지정한다.
+  // useEffect(() => {
+  //   if (currentUrl === "/" && scrollPosition > 1000) {
+  //     topMenu.classList.add('scroll');
+  //   } else {
+  //     topMenu.classList.remove('scroll');
+  //   }
+  // }, [scrollPosition, currentUrl]);
 
 
   return(
@@ -104,7 +142,7 @@ export const HeaderCons = (props) => {
             <TopBannerImg src={closeIcon} alt="닫기" />
           </a>
         </TopBanner>
-        <TopMenu className="row">
+        <TopMenu className="topMenu row">
           <MainMenu className="row">
             <h1>
               <TopMenuLogo>로고</TopMenuLogo>
@@ -129,7 +167,7 @@ export const HeaderCons = (props) => {
           <SubMenu>
             <ul className="row">
               <SubMenuLi>
-                <TopMenuA>로그인</TopMenuA>
+                <TopMenuA >로그인</TopMenuA>
               </SubMenuLi>
               <SubMenuLi>
                 <Link to={"/join"}>

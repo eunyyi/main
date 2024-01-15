@@ -15,6 +15,7 @@ import styled from "@emotion/styled";
 import { EtcCons } from './components/main/etc';
 import { FooterCons } from './components/footer';
 
+
 export const RoomH1 = styled.h1`
     font-size:45px;
     text-align: center;
@@ -50,6 +51,7 @@ export const RoomA = styled.a`
 
 `;
 
+
 const MainPage = () => {
   let roomList = [
     {target:'01', title: '디럭스 더블', component:<Double/>},
@@ -59,6 +61,7 @@ const MainPage = () => {
     {target:'05', title: '로얄 스위트', component:<Royal/>},
   ];
   const [target, setTarget] =useState('01');
+  const [viewHeader, setViewHeader] = useState(true)
 
   return (
     <>

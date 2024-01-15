@@ -27,7 +27,7 @@ export const FloorP = styled.p`
 
 export const FloorBtn = styled.button`
     border: none;
-    margin: 125px 0 64px;
+    margin: 80px 0 64px;
     font-size: 22px;
     font-weight: 400;
     cursor: pointer;

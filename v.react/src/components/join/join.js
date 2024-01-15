@@ -2,6 +2,29 @@ import styled from "@emotion/styled";
 import Sns1 from "../../images/icons/naver.png";
 import Sns2 from "../../images/icons/kakao.png";
 import Sns3 from "../../images/icons/google.png";
+import { useState } from "react";
+import {number, object, ref, string} from "yup";
+import {useFormik} from "formik";
+
+let userSchema = object({
+    id: string('문자타입이 아님')
+        .min(10,'10글자 미만은 안됨')
+        .max(30,'30글자 초과는 안됨')
+        .required('필수입력값임'), 
+    password: string('문자타입이 아님')
+        .min(6,'6글자 미만은 안됨')
+        .max(30,'30글자 초과는 안됨')
+        .required('필수입력값임'),
+    passwordCheck: string('문자타입이 아님')
+        .oneOf([ref('password'),null], '비밀번호가 일치하지 않습니다')
+        .min(6,'6글자 미만은 안됨')
+        .max(30,'30글자 초과는 안됨')
+        .required('필수입력값임'),
+    phone: string('문자타입이 아님')
+        .matches(/^[0-9]{11}$/i, '01012345678형태로 입력해주세요')
+        .required('필수입력값임')
+});
+
 
 const Join = styled.div`
     text-align: center;
@@ -137,7 +160,15 @@ const SnsImg = styled.img`
     cursor: pointer;
 `;
 
+
+
 export const JoinCons = () => {
+    const formik = useFormik({
+        initialValues : {id:'', password:'', passwordCheck:''},
+        onSubmit: () => {},
+        validationSchema: userSchema
+    });
+
     return(
         <Join>
             <JoinBg></JoinBg>
@@ -145,25 +176,25 @@ export const JoinCons = () => {
                 <ContentsH1 className="serif">회원가입</ContentsH1>
                 <ContentsP>회원이 되어 다양한 혜택을 경험해 보세요!</ContentsP>
                 <InputWrap className="row">
-                    <Label for="ID">* 아이디</Label>
-                    <Input id="ID" name="ID" type="ID"/>
-                    <ErrMsg id="ID-err-msg">아이디는 필수 입력 값입니다.</ErrMsg>
+                    <Label>* 아이디</Label>
+                    <Input id="iD" onChange={formik.handleChange} value={formik.values.id}/>
+                    <ErrMsg id="ID-err-msg">{formik.errors.id}</ErrMsg>
                 </InputWrap>
                 <InputWrap className="row">
-                    <Label for="password">* 비밀번호</Label>
-                    <Input id="password" name="password" type="password"/>
-                    <ErrMsg id="password-err-msg">비밀번호는 필수 입력 값입니다.</ErrMsg>
+                <Label>* 비밀번호</Label>
+                    <Input id="password" onChange={formik.handleChange} value={formik.values.password}/>
+                    <ErrMsg id="ID-err-msg">{formik.errors.password}</ErrMsg>
                 </InputWrap>
                 <InputWrap className="row">
-                    <Label for="password-check">* 비밀번호 확인</Label>
-                    <Input id="password-check" name="password-check" type="password-check"/>
-                    <ErrMsg id="password-check-err-msg">비밀번호 확인은 필수 입력 값입니다.</ErrMsg>
+                    <Label>* 비밀번호 확인</Label>
+                    <Input id="passwordCheck" onChange={formik.handleChange} value={formik.values.passwordCheck}/>
+                    <ErrMsg id="ID-err-msg">{formik.errors.id}</ErrMsg>
                 </InputWrap>
                 <InputWrap className="row">
                     <Label for="phone-check">* 휴대폰 인증</Label>
                     <PhoneCheck>
                         <PhoneCheckDiv className="row">
-                            <Input id="phone-check" name="phone-check" type="phone-check" style={{width:'14.375vw'}}/>
+                            <Input id="phoneCheck" onChange={formik.handleChange} value={formik.values.phone} style={{width:'14.375vw'}}/>
                             <PhoneCheckBtn>전송</PhoneCheckBtn>
                         </PhoneCheckDiv>
                         <Input id="check" type="text" style={{width:'10.990vw', height:'50px'}}/>
