@@ -30,6 +30,7 @@ const TopMenuLogo = styled.a`
 
 const TopMenuA = styled.a`
     color: #000;
+    cursor: pointer;
 `;
 
 const MainMenu = styled.div`

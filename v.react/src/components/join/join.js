@@ -28,6 +28,7 @@ let userSchema = object({
 
 const Join = styled.div`
     text-align: center;
+    margin-bottom: 200px;
 `;
 
 const JoinBg = styled.div`
@@ -165,7 +166,9 @@ const SnsImg = styled.img`
 export const JoinCons = () => {
     const formik = useFormik({
         initialValues : {id:'', password:'', passwordCheck:''},
-        onSubmit: () => {},
+        onSubmit: () => {
+            alert('제출됨');
+        },
         validationSchema: userSchema
     });
 
@@ -175,38 +178,52 @@ export const JoinCons = () => {
             <Contents className="row">
                 <ContentsH1 className="serif">회원가입</ContentsH1>
                 <ContentsP>회원이 되어 다양한 혜택을 경험해 보세요!</ContentsP>
-                <InputWrap className="row">
-                    <Label>* 아이디</Label>
-                    <Input id="iD" onChange={formik.handleChange} value={formik.values.id}/>
-                    <ErrMsg id="ID-err-msg">{formik.errors.id}</ErrMsg>
-                </InputWrap>
-                <InputWrap className="row">
-                <Label>* 비밀번호</Label>
-                    <Input id="password" onChange={formik.handleChange} value={formik.values.password}/>
-                    <ErrMsg id="ID-err-msg">{formik.errors.password}</ErrMsg>
-                </InputWrap>
-                <InputWrap className="row">
-                    <Label>* 비밀번호 확인</Label>
-                    <Input id="passwordCheck" onChange={formik.handleChange} value={formik.values.passwordCheck}/>
-                    <ErrMsg id="ID-err-msg">{formik.errors.id}</ErrMsg>
-                </InputWrap>
-                <InputWrap className="row">
-                    <Label for="phone-check">* 휴대폰 인증</Label>
-                    <PhoneCheck>
-                        <PhoneCheckDiv className="row">
-                            <Input id="phoneCheck" onChange={formik.handleChange} value={formik.values.phone} style={{width:'14.375vw'}}/>
-                            <PhoneCheckBtn>전송</PhoneCheckBtn>
-                        </PhoneCheckDiv>
-                        <Input id="check" type="text" style={{width:'10.990vw', height:'50px'}}/>
-                    </PhoneCheck>
-                    <ErrMsg id="phone-check-err-msg">값을 입력해주세요.</ErrMsg>
-                </InputWrap>
+                <form>
+                    <InputWrap className="row">
+                        <Label>* 아이디</Label>
+                        <Input name="id" 
+                            onBlur={formik.handleBlur}
+                            onChange={formik.handleChange} 
+                            value={formik.values.id}
+                        />
+                        {formik.touched.id && <ErrMsg id="ID-err-msg">{formik.errors.id}</ErrMsg>}
+                    </InputWrap>
+                    <InputWrap className="row">
+                        <Label>* 비밀번호</Label>
+                        <Input name="password" 
+                            onBlur={formik.handleBlur}
+                            onChange={formik.handleChange} 
+                            value={formik.values.password}
+                        />
+                        {formik.touched.password && <ErrMsg id="ID-err-msg">{formik.errors.password}</ErrMsg>}
+                    </InputWrap>
+                    <InputWrap className="row">
+                        <Label>* 비밀번호 확인</Label>
+                        <Input name="passwordCheck"
+                            onBlur={formik.handleBlur} 
+                            onChange={formik.handleChange} 
+                            value={formik.values.passwordCheck}
+                        />
+                        {formik.touched.passwordCheck && <ErrMsg id="ID-err-msg">{formik.errors.passwordCheck}</ErrMsg>}
+                    </InputWrap>
+                    <InputWrap className="row">
+                        <Label for="phone-check">* 휴대폰 인증</Label>
+                        <PhoneCheck>
+                            <PhoneCheckDiv className="row">
+                                <Input id="phoneCheck" onChange={formik.handleChange} value={formik.values.phone} style={{width:'14.375vw'}}/>
+                                <PhoneCheckBtn>전송</PhoneCheckBtn>
+                            </PhoneCheckDiv>
+                            <Input id="check" type="text" style={{width:'10.990vw', height:'50px'}}/>
+                        </PhoneCheck>
+                        <ErrMsg id="phone-check-err-msg">값을 입력해주세요.</ErrMsg>
+                    </InputWrap>
+                </form>
                 <Span style={{marginTop:'55px'}}>가입 시, <Span style={{color:'#2196BA'}}>서비스 이용약관, 개인정보처리방침</Span>에 동의합니다. </Span>
                 <Agree className="row">
                     <input type="checkbox" name="checkbox" id="checkbox" style={{width:'20px',height:'20px', margin:0}}/>
                     <AgreeP>이벤트 알림 수신 동의</AgreeP>
                 </Agree>
-                <EndBtn type="button" onclick="onRegister();">회원가입하기</EndBtn>
+                <EndBtn type="button" onSubmit={formik.handleSubmit}>회원가입하기</EndBtn>
                 <SnsJoin>계정 간편가입</SnsJoin>
                 <Sns className="row">
                     <SnsImg src={Sns1} alt=""/>

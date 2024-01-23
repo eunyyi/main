@@ -3,7 +3,7 @@ import { Route, Routes, Link } from 'react-router-dom';
 import logo from './logo.svg';
 import MainPage from './mainPage';
 import LoginPage from './login';
-import JoinPage from './join';
+import JoinPage from './joinPage';
 import Reset from './reset';
 import './app.css';
 import { SubPage } from './subPage';

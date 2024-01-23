@@ -19,6 +19,15 @@ export const Royal = () => {
         setNav1(slider1);
         setNav2(slider2);
     });
+    const SliderImg = styled.img`
+
+    width:100%;
+    opacity:.4;
+
+    &:hover {
+      opacity:1;
+    }
+  `;
 
     const settingsMain = {
         slidesToShow: 1,
@@ -91,7 +100,7 @@ export const Royal = () => {
                 {slidesData.map((slide) =>
 
                 <div className="slick-slide" key={slide.id} style={{width:'20%'}}>
-                    <img className="slick-slide-image" src={slide.source} style={{width:'100%', opacity:'.4'}}/>
+                    <SliderImg className="slick-slide-image" src={slide.source}/>
                 </div>
                 )}
 

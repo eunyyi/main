@@ -96,27 +96,39 @@ export const SlideImg9 = styled.div`
     background: url('/assets/party/party3.jpg') no-repeat center / cover;
 `;
 
-function SampleNextArrow(props) {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{ ...style, display: "block", background: "red", zIndex:"99" }}
-      onClick={onClick}
-    />
-  );
-}
+const Bar = styled.div`
+  width:500px;
+  height: 10px;
+  border-radius:10px;
+  background-color: #a6a6a6;
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
 
-function SamplePrevArrow(props) {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{ ...style, display: "block", background: "green", zIndex:"99"}}
-      onClick={onClick}
-    />
-  );
-}
+`;
+
+// function SampleNextArrow(props) {
+//   const { className, style, onClick } = props;
+//   return (
+//     <div
+//       className={className}
+//       style={{ ...style, display: "block", background: "red", zIndex:"99" }}
+//       onClick={onClick}
+//     />
+//   );
+// }
+
+// function SamplePrevArrow(props) {
+//   const { className, style, onClick } = props;
+//   return (
+//     <div
+//       className={className}
+//       style={{ ...style, display: "block", background: "green", zIndex:"99"}}
+//       onClick={onClick}
+//     />
+//   );
+// }
 
 export const EtcCons = () => {
   const settings = {
@@ -129,8 +141,8 @@ export const EtcCons = () => {
     variableWidth: true,
     centerPadding: '10px',
     arrows: false,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />
+    // nextArrow: <SampleNextArrow />,
+    // prevArrow: <SamplePrevArrow />
 
   };
 
@@ -160,7 +172,8 @@ export const EtcCons = () => {
             style={{width: '100%',
                 height: '568px',
                 background: 'rgba(240, 240, 240, 0.80)',
-                paddingTop: '45px',}} 
+                paddingTop: '45px',
+              position: 'relative'}} 
                 ref={slickRef}
             className="slider">
                   <Slide>
@@ -173,7 +186,8 @@ export const EtcCons = () => {
                     <SlideImg3/>
                   </Slide>
             </Slider>   
-            <div className="row" style={{position:"absolute", top:"5px", right:0}}>
+            <Bar></Bar>
+            {/* <div className="row" style={{position:"absolute", top:"5px", right:0}}>
               <div onClick={previous} style={{width:"50px", height:"50px", border:"1px solid #9E9E9E", padding:"10px"}}>
                 <img 
                   src={Left}
@@ -186,7 +200,7 @@ export const EtcCons = () => {
                   style={{width:"30px"}}
                 />
               </div>
-            </div>
+            </div> */}
           </EtcInner>
           <EtcInner>
             <EtcH2 className="serif" >WEDDING</EtcH2>
@@ -194,7 +208,8 @@ export const EtcCons = () => {
             style={{width: '100%',
                 height: '568px',
                 background: 'rgba(240, 240, 240, 0.80)',
-                paddingTop: '45px',}} 
+                paddingTop: '45px',
+              position: 'relative'}} 
                 ref={slickRef2}
             className="slider">
                   <Slide>
@@ -206,21 +221,8 @@ export const EtcCons = () => {
                   <Slide>              
                     <SlideImg6/>
                   </Slide>
-            </Slider>  
-            <div className="row" style={{position:"absolute", top:"5px", right:0}}>
-              <div onClick={previous2} style={{width:"50px", height:"50px", border:"1px solid #9E9E9E", padding:"10px"}}>
-                <img 
-                  src={Left}
-                  style={{width:"30px", lineHeight:"30px"}}
-                />
-              </div>
-              <div onClick={next2} style={{width:"50px", height:"50px", border:"1px solid #9E9E9E", padding:"10px"}}>
-                <img 
-                  src={Right}
-                  style={{width:"30px"}}
-                />
-              </div>
-            </div> 
+            </Slider>
+            <Bar></Bar>  
           </EtcInner>
           <EtcInner>
             <EtcH2 className="serif" >PARTY</EtcH2>
@@ -228,7 +230,8 @@ export const EtcCons = () => {
             style={{width: '100%',
                 height: '568px',
                 background: 'rgba(240, 240, 240, 0.80)',
-                paddingTop: '45px',}} 
+                paddingTop: '45px',
+              position: 'relative'}} 
                 ref={slickRef3}
             className="slider">
                   <Slide>
@@ -241,20 +244,7 @@ export const EtcCons = () => {
                     <SlideImg9/>
                   </Slide>
             </Slider>   
-            <div className="row" style={{position:"absolute", top:"5px", right:0}}>
-              <div onClick={previous3} style={{width:"50px", height:"50px", border:"1px solid #9E9E9E", padding:"10px"}}>
-                <img 
-                  src={Left}
-                  style={{width:"30px", lineHeight:"30px"}}
-                />
-              </div>
-              <div onClick={next3} style={{width:"50px", height:"50px", border:"1px solid #9E9E9E", padding:"10px"}}>
-                <img 
-                  src={Right}
-                  style={{width:"30px"}}
-                />
-              </div>
-            </div>
+            <Bar></Bar>
           </EtcInner>
         </Etc>
     );
