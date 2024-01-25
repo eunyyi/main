@@ -4,11 +4,10 @@ import Sns2 from "../../images/icons/kakao.png";
 import Sns3 from "../../images/icons/google.png";
 import { useState } from "react";
 import {number, object, ref, string} from "yup";
+import { Link } from "react-router-dom";
 import {useFormik} from "formik";
 import * as Yup from 'yup';
 import "yup-phone";
-import { Link } from "react-router-dom";
-
 
 let userSchema = Yup.object().shape({
     id: Yup.string('문자타입이 아닙니다')

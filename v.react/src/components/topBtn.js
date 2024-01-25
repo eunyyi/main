@@ -11,7 +11,7 @@ export const TopBtnA = styled.a`
     display:block;
     width: 50px;
     height: 50px;
-    border: 1px solid black;
+    border: 1px solid #dbdbdb;
     background: #FFF;
     text-align: center;
     line-height: 50px;
@@ -54,7 +54,7 @@ export const TopBtnCons = () => {
     return(
         <TopBtn onClick={scrollToTop}>
             <TopBtnA>
-                <TopBtnImg src={downIcon} alt="위로올라가기" />
+                <TopBtnImg src={downIcon} alt="위로올라가기"/>
             </TopBtnA>
         </TopBtn>
     );

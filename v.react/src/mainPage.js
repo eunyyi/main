@@ -88,6 +88,7 @@ const TopBanner = styled.div`
     text-align: center;
     color: #FFF; 
     position: relative;
+    display: ${(props) => (props.bannerIsOpen ? "none" : "block")};
 `;
 
 const TopBannerImg = styled.img`
@@ -242,8 +243,9 @@ const MainPage = () => {
     {target:'05', title: '로얄 스위트', component:<Royal/>},
   ];
   const [target, setTarget] =useState('01');
-  const [bannerIsOpen, setBannerIsOpen] = useState(false);
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [bannerIsOpen, setBannerIsOpen] = useState(false);
+
   const formik = useFormik({
     initialValues : {
         id:'',
@@ -265,7 +267,7 @@ const MainPage = () => {
         <TopBanner>
           <p>경원재 앰버서더 인천 시민 25% 객실 할인</p>
           <a href="#!">
-            <TopBannerImg src={closeIcon} alt="닫기" onClick={()=>setBannerIsOpen(false)}/>
+            <TopBannerImg src={closeIcon} alt="닫기" onClick={()=>setBannerIsOpen(true)}/>
           </a>
         </TopBanner>
         <TopMenu className="row" 
@@ -401,7 +403,7 @@ const MainPage = () => {
                         <ErrMsg>{formik.errors.password}</ErrMsg>
                         ) : null}
                     </InputWrapper>
-                </form>
+              </form>
                 <Link to={'/'}>
                   <EndBtn className="end" type="button" onClick={()=>{alert('로그인이 완료되었습니다!')}}>
                       로그인
