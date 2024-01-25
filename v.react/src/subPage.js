@@ -12,6 +12,21 @@ import Modal from 'react-modal';
 import Naver from "../src/images/icons/naver.png";
 import Kakao from "../src/images/icons/kakao.png";
 import Google from "../src/images/icons/google.png";
+import {useFormik} from "formik";
+import * as Yup from 'yup';
+import "yup-phone";
+
+let userSchema = Yup.object().shape({
+  id: Yup.string('문자타입이 아닙니다')
+      .min(10,'5글자 미만은 안됩니다')
+      .max(30,'10글자 초과는 안됩니다')
+      .required('필수입력값입니다'), 
+  password: Yup.string('문자타입이 아닙니다')
+      .min(6,'6글자 미만은 안됩니다')
+      .max(30,'30글자 초과는 안됩니다')
+      .required('필수입력값입니다'),    
+});
+
 
 const Header = styled.header`
     width: 100%;
@@ -77,6 +92,7 @@ const TopBannerImg = styled.img`
     right: 120px;
     transform: translateY(-50%);
 `;
+
 const ModalH2 = styled.h2`
   text-align: center;
   font-size: 36px;
@@ -108,7 +124,6 @@ const ErrMsg = styled.p`
   margin: 0;
   margin-bottom: 15px;
   align-self: flex-start;
-  display: none;
 `;
 const EndBtn = styled.button`
   width: 473px;
@@ -162,6 +177,17 @@ right: 20px;
 
 export const SubPage = () => {
     const [modalIsOpen, setModalIsOpen] = useState(false);
+    const formik = useFormik({
+      initialValues : {
+          id:'',
+          password:'', 
+          passwordCheck:''
+      },
+      onSubmit: () => {
+          alert('정상적으로 완료되었습니다!');
+      },
+      validationSchema: userSchema
+  });
 
     return(
     <>
@@ -247,23 +273,41 @@ export const SubPage = () => {
                 }}
                 isOpen={modalIsOpen}>
                 <ModalH2 className="serif">로그인</ModalH2>
-                <InputWrapper className="row">
-                    <ModalLabel htmlFor="ID">* 아이디</ModalLabel>
-                    <ModalInput id="ID" name="ID" type="ID" />
-                    <ErrMsg id="ID-err-msg">
-                    아이디는 필수 입력 값입니다.
-                    </ErrMsg>
-                </InputWrapper>
-                <InputWrapper className="row">
-                    <ModalLabel htmlFor="password">* 비밀번호</ModalLabel>
-                    <ModalInput id="password" name="password" type="password" />
-                    <ErrMsg id="password-err-msg">
-                    비밀번호는 필수 입력 값입니다.
-                    </ErrMsg>
-                </InputWrapper>
-                <EndBtn className="end" type="button" onclick="onLogin();">
-                    로그인
-                </EndBtn>
+                <form onSubmit={formik.handleSubmit}>
+                    <InputWrapper className="row">
+                        <ModalLabel htmlFor="ID">* 아이디</ModalLabel>
+                        <ModalInput 
+                        id="id" 
+                        name="id" 
+                        type="id" 
+                        onBlur={formik.handleBlur}
+                        onChange={formik.handleChange} 
+                        value={formik.values.id}
+                        />
+                        {formik.touched.id && formik.errors.id ? (
+                        <ErrMsg>{formik.errors.id}</ErrMsg>
+                        ) : null}
+                    </InputWrapper>
+                    <InputWrapper className="row">
+                        <ModalLabel htmlFor="password">* 비밀번호</ModalLabel>
+                        <ModalInput 
+                        id="password" 
+                        name="password" 
+                        type="password"
+                        onBlur={formik.handleBlur}
+                        onChange={formik.handleChange} 
+                        value={formik.values.password}
+                         />
+                        {formik.touched.password && formik.errors.password ? (
+                        <ErrMsg>{formik.errors.password}</ErrMsg>
+                        ) : null}
+                    </InputWrapper>
+                </form>
+                <Link to={'/'}>
+                  <EndBtn className="end" type="button" onClick={()=>{alert('로그인이 완료되었습니다!')}}>
+                      로그인
+                  </EndBtn>
+                </Link>
                 <ModalP>아이디/비밀번호 찾기</ModalP>
                 <SnsJoinP>간편 로그인</SnsJoinP>
                 <Sns className="row">
