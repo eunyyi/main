@@ -25,6 +25,7 @@ import * as Yup from 'yup';
 import "yup-phone";
 import Logo1 from "./images/logo/typeLogo_wh_2.png";
 import Logo2 from "./images/logo/logo-Bl_2.png";
+import ScrollToTopOnMount from './components/onMount';
 
 // import Logo1 from "../images/logo/typeLogo_wh_2.png";
 
@@ -279,6 +280,7 @@ const MainPage = () => {
 
   return (
     <div>
+      <ScrollToTopOnMount />
       <TopBtnCons/>
       <Header>
         {bannerIsOpen && (

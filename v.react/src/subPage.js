@@ -15,6 +15,7 @@ import Google from "../src/images/icons/google.png";
 import {useFormik} from "formik";
 import * as Yup from 'yup';
 import "yup-phone";
+import ScrollToTopOnMount from "./components/onMount";
 
 let userSchema = Yup.object().shape({
   id: Yup.string('문자타입이 아닙니다')
@@ -200,6 +201,7 @@ export const SubPage = () => {
 
     return(
     <>
+        <ScrollToTopOnMount />
         <TopBtnCons/>
         <Header>
         {bannerIsOpen && (

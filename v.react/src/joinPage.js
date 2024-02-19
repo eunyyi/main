@@ -13,6 +13,7 @@ import {useFormik} from "formik";
 import * as Yup from 'yup';
 import "yup-phone";
 import { useNavigate } from 'react-router-dom';
+import ScrollToTopOnMount from "./components/onMount";
 
 let userSchema = Yup.object().shape({
     id: Yup.string('문자타입이 아닙니다')
@@ -196,6 +197,7 @@ export const JoinPage = () => {
     });
     return(
         <>
+            <ScrollToTopOnMount />
             <TopBtnCons/>
             <Header>
             {bannerIsOpen && (
