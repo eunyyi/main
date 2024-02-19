@@ -166,7 +166,7 @@ const ReservationBtn = styled.button`
     color: #1A1A1A;
     position: absolute;
     top: 440px;
-    right: 12px;
+    right: 0;
     cursor: pointer;
 `;
 
@@ -187,7 +187,14 @@ export const ResCons = () => {
     const [moreOpen, setMoreOpen] = useState(false);
 
     const clickMore = () => {
-        setMoreOpen(!moreOpen);
+        if (nowDate === "날짜를 선택해주세요" || nowDate1 === "날짜를 선택해주세요") {
+            alert('체크인 및 체크아웃 날짜를 선택해주세요!');
+        } else if (nowDate > nowDate1) {
+            alert('체크인 날짜는 체크아웃 날짜보다 이전이어야 합니다!');
+            setMoreOpen(null);
+        } else {
+            setMoreOpen(!moreOpen);
+        }
     };
 
     const handleToggleCalendar = () => {
@@ -211,60 +218,49 @@ export const ResCons = () => {
     const [count1, setCount1] = useState(1);
 
     const onIncrease1 = () => {
-        setCount1(prevCount => prevCount + 1);
+        if (count1 !=9) {
+            setCount1(prevCount => prevCount + 1);
+        }else
+        return;
 
     };
 
     const onDecrease1 = () => {
-
-        if (setCount1 != 1) {
+        if (count1 !=1) {
             setCount1(prevCount => prevCount - 1);
-          }
+        }else
+        return;
     };
 
 
     const [count2, setCount2] = useState(1);
 
     const onIncrease2 = () => {
-
-        if (setCount2 !=9 ) {
+        if (count2 !=9) {
             setCount2(prevCount => prevCount + 1);
-          }
+        }else
+        return;
     };
 
     const onDecrease2 = () => {
-
-        if (setCount2 != 1) {
+        if (count2 !=1) {
             setCount2(prevCount => prevCount - 1);
-          }
+        }else
+        return;
     };
+    const validate = () => {
+        if (nowDate > nowDate1) {
+            alert('체크인 날짜는 체크아웃 날짜보다 이전이어야 합니다!');
+        }
+    }
 
     return(
         <Reser>
             <ReserH1 className="serif">RESERVATION</ReserH1>
             <ReserH4>아래 항목들을 선택해주시면 예약 가능한 객실이 안내됩니다.</ReserH4>
             <ReserDiv className="row">
-                {/* <SelectCons>
-                <ReserP>호텔 선택</ReserP>
-                <Name>
-                    <NameDiv className="row" onclick="downName();">
-                        <a href="#">경원재 앰버서더 인천</a>
-                        <a href="#">
-                            <img src={Down} alt="" />
-                        </a>
-                    </NameDiv>
-                    <div onclick="upName();" className="hidden">
-                        <li>
-                            <a href="#">
-                            경원재 앰배서더 인천 <br />
-                            (인천광역시 연수구 테크노파크로 200)
-                            </a>
-                        </li>
-                    </div>
-                </Name>
-                </SelectCons> */}
                 <FindCons className="row">
-                    <FindCheckIn>
+                    <FindCheckIn onChange={validate()}>
                         <ReserP>체크인</ReserP>
                         <CheckIn
                         onClick={handleToggleCalendar}>{nowDate}</CheckIn>
@@ -281,7 +277,11 @@ export const ResCons = () => {
                         <CheckOut
                         onClick={handleToggleCalendar1}>{nowDate1}</CheckOut>
                         <CalendarWrapper isOpen={isOpen1}>
-                            <Calendar onChange={handleDateChange1} value={value} formatDay={(locale, date) => moment(date).format("DD")}>{moment(value).format("YYYY년 MM월 DD일")} </Calendar>
+                            <Calendar 
+                            onChange={handleDateChange1} 
+                            value={value} 
+                            formatDay={(locale, date) => moment(date).format("DD")}>
+                            {moment(value).format("YYYY년 MM월 DD일")} </Calendar>
                         </CalendarWrapper>
                     </FindCheckIn>
                 </FindCons>
@@ -329,7 +329,7 @@ export const ResCons = () => {
                         </ReservationSpan>
                         <ReservationBtn>예약하기</ReservationBtn>
                     </ReservationDiv>
-                    <ReservationDiv>
+                    <ReservationDiv style={{margin:'0 15px'}}>
                         <ReservationP>디럭스 스위트</ReservationP>
                         <ReservationImg src={Sweet} alt="" />
                         <ReservationSpan className="person" style={{margin:'16px 0 20px'}}>최대 4인</ReservationSpan>

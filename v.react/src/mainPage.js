@@ -14,7 +14,7 @@ import { useEffect, useState } from 'react';
 import styled from "@emotion/styled";
 import { EtcCons } from './components/main/etc';
 import { FooterCons } from './components/footer';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import closeIcon from '../src/images/icons/close2.png';
 import Modal from 'react-modal';
 import Naver from "../src/images/icons/naver.png";
@@ -23,10 +23,14 @@ import Google from "../src/images/icons/google.png";
 import {useFormik} from "formik";
 import * as Yup from 'yup';
 import "yup-phone";
+import Logo1 from "./images/logo/typeLogo_wh_2.png";
+import Logo2 from "./images/logo/logo-Bl_2.png";
+
+// import Logo1 from "../images/logo/typeLogo_wh_2.png";
 
 let userSchema = Yup.object().shape({
   id: Yup.string('문자타입이 아닙니다')
-      .min(10,'5글자 미만은 안됩니다')
+      .min(5,'5글자 미만은 안됩니다')
       .max(30,'10글자 초과는 안됩니다')
       .required('필수입력값입니다'), 
   password: Yup.string('문자타입이 아닙니다')
@@ -55,7 +59,7 @@ const TopMenuLogo = styled.a`
     display: block;
     width: 151px;
     height: 59px;
-    background: url('/assets/logo/typeLogo_wh_2.png') no-repeat center / contain;
+    background: url(${Logo1}) no-repeat center / contain;
     text-indent: -9999px;
 `;
 
@@ -88,7 +92,7 @@ const TopBanner = styled.div`
     text-align: center;
     color: #FFF; 
     position: relative;
-    display: ${(props) => (props.bannerIsOpen ? "none" : "block")};
+    /* display: ${(props) => (props.bannerIsOpen ? "none" : "block")}; */
 `;
 
 const TopBannerImg = styled.img`
@@ -235,6 +239,7 @@ const useScroll = () => {
 }
 
 const MainPage = () => {
+  const navigate = useNavigate();
   let roomList = [
     {target:'01', title: '디럭스 더블', component:<Double/>},
     {target:'02', title: '디럭스 더블&싱글', component:<DoubleSingle/>},
@@ -244,7 +249,7 @@ const MainPage = () => {
   ];
   const [target, setTarget] =useState('01');
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [bannerIsOpen, setBannerIsOpen] = useState(false);
+  const [bannerIsOpen, setBannerIsOpen] = useState(true);
 
   const formik = useFormik({
     initialValues : {
@@ -253,30 +258,42 @@ const MainPage = () => {
         passwordCheck:''
     },
     onSubmit: () => {
-        alert('정상적으로 완료되었습니다!');
-    },
+      formik.validateForm().then(() => {
+          if (Object.keys(formik.errors).length === 0) {
+              alert('로그인이 완료되었습니다!');
+              setModalIsOpen(false); 
+              navigate('/');
+              console.log('성공');
+          } else {
+              alert('로그인이 실패했습니다!'); 
+          }
+      });
+  },
     validationSchema: userSchema
 });
 
   const {y} = useScroll();
+  const headerStyle = {
+    backgroundImage: y > 1000 ? `url(${Logo2})` : `url(${Logo1})`,
+  };
 
   return (
     <div>
       <TopBtnCons/>
       <Header>
-        <TopBanner>
-          <p>경원재 앰버서더 인천 시민 25% 객실 할인</p>
-          <a href="#!">
-            <TopBannerImg src={closeIcon} alt="닫기" onClick={()=>setBannerIsOpen(true)}/>
-          </a>
-        </TopBanner>
+        {bannerIsOpen && (
+          <TopBanner>
+            <p>경원재 앰버서더 인천 시민 25% 객실 할인</p>
+            <TopBannerImg src={closeIcon} alt="닫기" onClick={()=>setBannerIsOpen(false)}/>
+          </TopBanner>
+        )}
         <TopMenu className="row" 
         style={{
           backgroundColor: y > 1000 ? 'white' : 'transparent', padding: y > 1000 ? '46px 80px' : '0 80px', margin: y > 1000 ? '0' : '46px'}}>
           <MainMenu className="row">
             <h1>
               <Link to={'/'}>
-                <TopMenuLogo>로고</TopMenuLogo>
+                <TopMenuLogo style={headerStyle}>로고</TopMenuLogo>
               </Link>
             </h1>
             <nav>
@@ -374,50 +391,48 @@ const MainPage = () => {
               }}
               isOpen={modalIsOpen}>
               <ModalH2 className="serif">로그인</ModalH2>
-              <form onSubmit={formik.handleSubmit}>
-                    <InputWrapper className="row">
-                        <ModalLabel htmlFor="ID">* 아이디</ModalLabel>
-                        <ModalInput 
-                        id="id" 
-                        name="id" 
-                        type="id" 
-                        onBlur={formik.handleBlur}
-                        onChange={formik.handleChange} 
-                        value={formik.values.id}
-                        />
-                        {formik.touched.id && formik.errors.id ? (
-                        <ErrMsg>{formik.errors.id}</ErrMsg>
-                        ) : null}
-                    </InputWrapper>
-                    <InputWrapper className="row">
-                        <ModalLabel htmlFor="password">* 비밀번호</ModalLabel>
-                        <ModalInput 
-                        id="password" 
-                        name="password" 
-                        type="password"
-                        onBlur={formik.handleBlur}
-                        onChange={formik.handleChange} 
-                        value={formik.values.password}
-                         />
-                        {formik.touched.password && formik.errors.password ? (
-                        <ErrMsg>{formik.errors.password}</ErrMsg>
-                        ) : null}
-                    </InputWrapper>
-              </form>
-                <Link to={'/'}>
-                  <EndBtn className="end" type="button" onClick={()=>{alert('로그인이 완료되었습니다!')}}>
-                      로그인
-                  </EndBtn>
-                </Link>
+              <form>
+              <InputWrapper className="row">
+                  <ModalLabel htmlFor="ID">* 아이디</ModalLabel>
+                  <ModalInput 
+                  id="id" 
+                  name="id" 
+                  type="id" 
+                  onBlur={formik.handleBlur}
+                  onChange={formik.handleChange} 
+                  value={formik.values.id}
+                  />
+                  {formik.touched.id && formik.errors.id ? (
+                  <ErrMsg>{formik.errors.id}</ErrMsg>
+                  ) : null}
+              </InputWrapper>
+              <InputWrapper className="row">
+                  <ModalLabel htmlFor="password">* 비밀번호</ModalLabel>
+                  <ModalInput 
+                  id="password" 
+                  name="password" 
+                  type="password"
+                  onBlur={formik.handleBlur}
+                  onChange={formik.handleChange} 
+                  value={formik.values.password}
+                    />
+                  {formik.touched.password && formik.errors.password ? (
+                  <ErrMsg>{formik.errors.password}</ErrMsg>
+                  ) : null}
+              </InputWrapper>
+              </form>                    
+                <EndBtn className="end" type="submit" onClick={formik.handleSubmit}>
+                    로그인
+                </EndBtn>
               <ModalP>아이디/비밀번호 찾기</ModalP>
               <SnsJoinP>간편 로그인</SnsJoinP>
               <Sns className="row">
-                <SnsImg src={Naver} alt="" />
-                <SnsImg src={Kakao} alt="" />
-                <SnsImg src={Google} alt="" />
+                  <SnsImg src={Naver} alt="" />
+                  <SnsImg src={Kakao} alt="" />
+                  <SnsImg src={Google} alt="" />
               </Sns>
               <CloseImg src={closeIcon} onClick={()=>setModalIsOpen(false)}/>
-            </Modal>
+              </Modal>
         </section>
       </main>
       <FooterCons/>

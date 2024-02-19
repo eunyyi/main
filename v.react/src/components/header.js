@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import { Link } from "react-router-dom";
 import "./TopMenu.css";
+import Logo1 from "../images/logo/typeLogo_wh_2.png";
 
 const Header = styled.header`
     width: 100%;
@@ -27,7 +28,7 @@ const TopMenuLogo = styled.a`
     display: block;
     width: 151px;
     height: 59px;
-    background: url('/assets/logo/typeLogo_wh_2.png') no-repeat center / contain;
+    background: url(${Logo1}) no-repeat center / contain;
     text-indent: -9999px;
 `;
 
@@ -70,8 +71,7 @@ const TopBannerImg = styled.img`
     right: 120px;
     transform: translateY(-50%);
 `;
-
-
+ 
 export const HeaderCons = (props) => {
 
   // const topMenu = document.querySelector(".topMenu");

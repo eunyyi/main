@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { HeaderCons2 } from "./components/header2";
 import { ResCons } from "./components/sub/reservation";
 import { MembershipCons } from "./components/sub/membership";
@@ -18,7 +18,7 @@ import "yup-phone";
 
 let userSchema = Yup.object().shape({
   id: Yup.string('문자타입이 아닙니다')
-      .min(10,'5글자 미만은 안됩니다')
+      .min(5,'5글자 미만은 안됩니다')
       .max(30,'10글자 초과는 안됩니다')
       .required('필수입력값입니다'), 
   password: Yup.string('문자타입이 아닙니다')
@@ -55,7 +55,6 @@ const TopMenuLogo = styled.a`
 
 const TopMenuA = styled.a`
     color: #000;
-    cursor: pointer;
 `;
 
 const MainMenu = styled.div`
@@ -176,7 +175,9 @@ right: 20px;
 `;
 
 export const SubPage = () => {
+  const navigate = useNavigate();
     const [modalIsOpen, setModalIsOpen] = useState(false);
+    const [bannerIsOpen, setBannerIsOpen] = useState(true);
     const formik = useFormik({
       initialValues : {
           id:'',
@@ -184,8 +185,16 @@ export const SubPage = () => {
           passwordCheck:''
       },
       onSubmit: () => {
-          alert('정상적으로 완료되었습니다!');
-      },
+        formik.validateForm().then(() => {
+            if (Object.keys(formik.errors).length === 0) {
+                alert('로그인이 완료되었습니다!');
+                setModalIsOpen(false); 
+                navigate('/');
+            } else {
+                alert('로그인이 실패했습니다!'); 
+            }
+        });
+    },
       validationSchema: userSchema
   });
 
@@ -193,12 +202,12 @@ export const SubPage = () => {
     <>
         <TopBtnCons/>
         <Header>
+        {bannerIsOpen && (
           <TopBanner>
             <p>경원재 앰버서더 인천 시민 25% 객실 할인</p>
-            <a href="#!">
-              <TopBannerImg src={closeIcon} alt="닫기" />
-            </a>
+            <TopBannerImg src={closeIcon} alt="닫기" onClick={()=>setBannerIsOpen(false)}/>
           </TopBanner>
+        )}
           <TopMenu className="row">
             <MainMenu className="row">
               <h1>
@@ -273,7 +282,7 @@ export const SubPage = () => {
                 }}
                 isOpen={modalIsOpen}>
                 <ModalH2 className="serif">로그인</ModalH2>
-                <form onSubmit={formik.handleSubmit}>
+                <form>
                     <InputWrapper className="row">
                         <ModalLabel htmlFor="ID">* 아이디</ModalLabel>
                         <ModalInput 
@@ -303,11 +312,9 @@ export const SubPage = () => {
                         ) : null}
                     </InputWrapper>
                 </form>
-                <Link to={'/'}>
-                  <EndBtn className="end" type="button" onClick={()=>{alert('로그인이 완료되었습니다!')}}>
-                      로그인
-                  </EndBtn>
-                </Link>
+                <EndBtn className="end" type="submit" onClick={formik.handleSubmit}>
+                  로그인
+                </EndBtn>
                 <ModalP>아이디/비밀번호 찾기</ModalP>
                 <SnsJoinP>간편 로그인</SnsJoinP>
                 <Sns className="row">
