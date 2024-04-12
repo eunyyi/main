@@ -200,8 +200,8 @@
     .sec3 li,
     .sec4 li {
         width: 49%;
-        margin: 0 0.5%;
-        overflow: hidden;
+        margin: 0 0.5% 73px;
+        /* overflow: hidden; */
     }
     .productPerfume ul.product li {
         margin: 0 3px 70px;
@@ -241,22 +241,30 @@
     }
 
     .mapSelect {
-        justify-content: center;
         width: 100%;
-        flex-direction: column;
+        height: 45px;
+        justify-content: space-between;
+        /* flex-direction: column; */
     }
     .mapSelectDetail {
-        width: 75.26vw;
+        width: 58.162vw;
         justify-content: space-between;
+    }
+    .mapSelectDetail ul {
+        width: 270px;
     }
     .store {
         width: 100%;
     }
     .storeSearch div {
-        margin: 0;
-        width: 75.26vw;
+        /* margin: 0 auto;
+        width: 75.26vw; */
+        padding: 10px auto;
         text-align: center;
-        margin-top: 32px;
+        /* margin-top: 32px; */
+    }
+    .searchButton div {
+        margin-right: 20px;
     }
     footer {
         padding:  62px 40px;
@@ -437,6 +445,7 @@
 
     ul.product li {
         width: 99%;
+        height: auto;
         margin: 0 0.5% 181px;
         overflow: hidden;
     }
@@ -453,9 +462,13 @@
     }
 
     .productBox {
-        width: 100%;
+        width: 90%;
         height: 600px;
+        margin: 0 auto;
     }
+    /* .productImg1 {
+        border: 1px solid #000;
+    } */
 
     .sec5>div.row {
         width: 100%;
@@ -487,6 +500,9 @@
     .mapSelectDetail {
         width: 75.26vw;
     }
+    .mapSelectDetail ul {
+        width: 290px;
+    }
 
     .store div p:not(:first-child) {
         display: none;
@@ -498,12 +514,16 @@
     }
 
     .searchButton div {
-        justify-content: flex-start;
+        justify-content: space-between;
     }
 
     .searchButton img {
-        margin: 0 0 0 20px;
+        margin-right: 30px;
     }
+
+    /* .searchButton img {
+        margin: 0 0 0 20px;
+    } */
 
     .storeSearch {
         width: 75.26vw;

@@ -110,8 +110,14 @@ ul.subMenu {
 }
 .subMenuIcon {
     width: 121px;
+    align-items: center;
     justify-content: space-between;
     /* margin-left: 3.333vw; */
+}
+.subMenuIcon img {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
 }
 .shopLink {
     display: none;
@@ -196,7 +202,7 @@ iframe {
 .sec3 li,
 .sec4 li {
     width: 400px;
-    height: 711px;
+    /* height: 711px; */
     text-align: center;
     position: relative;
     margin-bottom: 70px;
